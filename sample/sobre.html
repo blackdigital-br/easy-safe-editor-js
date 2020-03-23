@@ -287,6 +287,8 @@
 
     </main>
 
+    <button id="botaoTeste" style="width: 100%;">AAAAAAAA</button>
+
     <!--  FOOTER  -->
     <footer class="d-flex align-items-center"> 
         <div class="container">
@@ -329,6 +331,10 @@
 <script async type="module">
     import easySafeEditor from "../src/easySafeEditor.js";
     easySafeEditor.init();
+
+    jQuery("#botaoTeste").click(function() {
+        easySafeEditor.saveValues();
+    });
 </script>
 
 </html>

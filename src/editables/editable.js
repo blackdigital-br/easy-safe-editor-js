@@ -9,4 +9,15 @@ export default class Editable {
         this.label = element.getAttribute("data-label");
         this.element = element;
     }
+
+    /**
+     * 
+     * @param {Object} datas 
+     */
+    getValue(values) {
+        var value = this.element.innerHTML;
+        value = value.replace(/\s\s+/g, ' ');
+        values[this.label] = value;
+        return values;
+    }
 }

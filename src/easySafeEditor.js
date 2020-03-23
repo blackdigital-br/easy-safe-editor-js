@@ -30,6 +30,17 @@ let easySafeEditor = {
             var editable = editableCores.createEditable(element);
             self.editables.push(editable);
         }
+    },
+
+    saveValues: function() {
+        var values = {};
+
+        for (var index in this.editables) {
+            var editable = this.editables[index];
+            values = editable.getValue(values);
+        }
+
+        console.log(values);
     }
 };
 
