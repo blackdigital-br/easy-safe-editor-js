@@ -1,0 +1,2795 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
+    padding-top: 90px;
+    padding-bottom: 70px;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+ul,
+li {
+    list-style-type: none;
+}
+
+a,
+img,
+a:hover, button {
+    text-decoration: none;
+    outline: none !important;
+}
+
+h1, h2, h3, h4, p{
+    font-weight: normal;
+}
+
+/* TEXTS */
+p{
+    color: #686868;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+/* ICONS */
+.icon-store{
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+.icon-store.ios{
+    background: url(../images/icon-apple.png) no-repeat center;
+}
+.icon-store.android{
+    background: url(../images/icon-android.png) no-repeat center;
+}
+
+ /* TITLE */
+.title-section{
+    font-size: 50px;
+    line-height: 46px;
+    font-family: 'nexa_lightregular';
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+.title-section strong{
+    font-family: 'nexa_boldregular';
+}
+
+/* BUTTONS */
+.btn, .btn-primary, button, input[type=submit]{
+    font-size: 16px;
+    font-family: 'nexa_boldregular';
+    color: #fff;
+    padding: 8px 40px !important;
+    background: #000;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+.btn:hover, .btn-primary:hover, button, input[type=submit]{
+    background: #000 !important;
+}
+
+/* HEADER */
+header{
+    background: #000000;
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+/* LOGO */
+.logo{
+    position: absolute;
+    left: 50%;
+    margin-left: -66.50px;
+}
+
+/* NAV */
+nav{
+    height: 90px;
+}
+nav .nav-item{
+    padding-right: 10px;
+}
+nav .nav-item:last-child{
+    padding-right: 0;
+}
+nav .nav-item a.active{
+    color: #f8d03f !important;
+    background: transparent !important;
+}
+nav .nav-item.dropdown .dropdown-menu a {
+    padding: 8px 15px;
+    color: #333;
+}
+nav .nav-item a{
+    color: #9e9e9e;
+    font-size: 16px;
+    font-family: 'bebas_neueregular';
+    line-height: 17px;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+nav .nav-item a:hover{
+    color: #fff3c8;
+}
+nav .nav-item.dropdown .dropdown-menu a:hover,
+nav .nav-item.dropdown .dropdown-menu a.active,
+nav .nav-item.dropdown .dropdown-menu a:active{
+    color: #3397af !important;
+    background: transparent !important;
+}
+.nav:first-child{
+    padding-left:100px;
+}
+.nav:last-child{
+    padding-right: 50px;
+}
+.navbar-toggler {
+    right: 0;
+    position: absolute;
+    top: 20px;
+}
+.navbar-toggler .navbar-toggler-icon{
+    background: url(../images/menu.svg) no-repeat center;
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background: transparent;
+    color: #f8d03f;
+}
+.dropdown-menu {
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: -1px 10px 32px -10px rgba(0,0,0,0.15);
+    -moz-box-shadow: -1px 10px 32px -10px rgba(0,0,0,0.15);
+    box-shadow: -1px 10px 32px -10px rgba(0,0,0,0.15);
+}
+
+/* LANGUAGES */
+nav .language a{
+    width: 23px;
+    height: 21px;
+    display: block;
+}
+nav .language.pt a{
+    background: url(../images/flag-brasil-disable.png) no-repeat center;
+}
+nav .language.en a{
+    background: url(../images/flag-eua-disable.png) no-repeat center;
+}
+nav .language.pt.active-flag a{
+    background: url(../images/flag-brasil.png) no-repeat center;
+}
+nav .language.en.active-flag a{
+    background: url(../images/flag-eua.png) no-repeat center;
+}
+
+/* CONTENT */
+
+/* BANNER */
+.banner-home{
+    height: 555px; 
+}
+.banner-home .carousel-item.video{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.banner-home .carousel-item{
+    background-size: cover;
+}
+.banner-home .carousel-item.video-mobile .banner-video {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/banner-video-mob.jpg);
+    background-size: cover;
+}
+.banner-home .carousel-item.video video{
+    /* width: 100%; */
+    width: 1920px;
+    height: 554px;
+}
+.banner-home .carousel-item, .banner-home .carousel-item .content{
+    width: 100%;
+    height: 554px;
+}
+.banner-home .carousel-item .content{
+    text-align: center;
+}
+.banner-home .carousel-item .content h1{
+    color: #ffffff;
+    font-family: 'nexa_boldregular';
+    font-size: 44px;
+    text-transform: uppercase;
+}
+.banner-home .carousel-item .content img{
+    padding-bottom: 30px;
+    max-width: 100%;
+}
+.banner-home .carousel-item .content p{
+    color: #dafffb;
+    font-family: 'nexa_lightregular';
+    font-size: 20px;
+    max-width: 700px;
+}
+.banner-home .carousel-item .content .btn.btn-primary{
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 11px 40px 8px !important;
+    background:rgba(0, 0, 0, .70);
+}
+
+/* PAGINATION */
+
+.carousel-indicators{
+    left: inherit;
+}
+.carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* HOME - SECTION GAMES */
+.section-games{
+    background: url(../images/bg-games.jpg) center no-repeat;
+    width: 100%;
+    height: auto;
+    min-height: 680px;
+    padding: 40px 0;
+    position: relative;
+}
+.section-games .content {
+    max-width: 700px;
+    padding: 50px 10px 20px 100px;
+}
+.section-games .content h2{
+    color: #ffc801;
+}
+.section-games .content h2 strong{
+    font-family: 'nexa_boldregular';
+    display: block;
+}
+.section-games .gamepad{
+    margin-top: -200px;
+    position: relative;
+}
+.section-games .content .btn.btn-primary{
+    background:#ffb607;
+    margin-top:10px;
+}
+.section-games .carro{
+    position: absolute;
+    right: -350px;
+    bottom: -240px;
+}
+
+/* HOME - REALIDADE VIRTUAL */
+.section-realidade-virtual{
+    background: url(../images/bg-realidade-virtual.jpg) center no-repeat;
+    width: 100%;
+    height: 738px;
+}
+.section-realidade-virtual .images-oculos{
+    width: 60%;
+    position: relative;
+}
+.section-realidade-virtual .images-oculos img{
+    position: absolute;
+}
+.section-realidade-virtual .images-oculos img:nth-child(1){
+    top: -120px;
+    right: 10px;
+}
+.section-realidade-virtual .images-oculos img:nth-child(2){
+    top: 15px;
+    left: -60px;
+}
+.section-realidade-virtual .images-oculos img:nth-child(3){
+    top: 130px;
+    right: 25px;
+}
+.section-realidade-virtual .images-oculos img:nth-child(4){
+    top: 330px;
+    left: -50px;
+}
+.section-realidade-virtual .content{
+    /* width: 40%;
+    max-width: 450px; */
+    width: 50%;
+    max-width: 500px;
+    /* padding: 80px 20px 20px; */
+    padding: 0px 20px 30px;
+    text-align: right;
+}
+.section-realidade-virtual .content img{
+    padding-bottom: 10px;
+}
+.section-realidade-virtual .content h2{
+    color: #3397af;
+}
+.section-realidade-virtual .content strong{
+    color: #3397af;
+}
+.section-realidade-virtual .content .btn.btn-primary{
+    background:#3397af;
+    max-resolution: top 0;
+}
+
+/* HOME - DESTAQUE */
+.section-banner-destaque{
+    background: url(../images/bg-bejj.jpg) center no-repeat;
+    width: 100%;
+    height: 1049px;
+    margin-top: -170px;
+    clip-path: polygon(0 25%, 100% 2%, 100% 100%, 0 88%);
+}
+.section-banner-destaque .content{
+    text-align: center;
+}
+.section-banner-destaque .content h2{
+    font-size: 60px;
+    color: #f8d03f;
+}
+.section-banner-destaque .content img{
+    max-width: 100%;
+    padding-bottom: 30px;
+}
+.section-banner-destaque .content p{
+    max-width: 540px;
+    margin: auto;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 22px;
+}
+.section-banner-destaque .content .buttons {
+    padding: 30px 0 60px;
+}
+.section-banner-destaque .content .buttons .icon-store.ios{
+    margin-right: 10px;
+}
+.section-banner-destaque .content .btn.btn-primary{
+    background:rgba(5, 7, 8, .5);
+    margin-top:10px;
+}
+
+/* SEECTION - CLIENTS */
+.section-clientes{
+    width: 100%;
+    height: auto;
+    padding: 40px 20px 0;
+}
+.section-clientes h2{
+    color: #909090;
+    font-size: 30px;
+    font-family: 'nexa_lightregular';
+    text-align: center;
+    padding-bottom: 60px;
+}
+.section-clientes h2 strong{
+    color: #000;
+    font-size: 50px;
+    display: block;
+}
+.section-clientes .clientes{
+    max-width: 840px;
+    margin: auto;
+}
+.section-clientes .clientes .cliente img {
+    max-width: 100%;
+}
+
+/* SOBRE */
+.section-sobre{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.section-sobre .content {
+    max-width: 900px;
+    padding: 70px 0 20px;
+    margin: auto;
+}
+.section-sobre .content .text{
+    max-width: 510px;
+}
+.section-sobre .content h1{
+    color: #ffc801;
+}
+.section-sobre .content h1 strong{
+    font-family: 'nexa_boldregular';
+    display: block;
+}
+.section-sobre .content h3:first-of-type{
+    padding-top: 30px;
+}
+.section-sobre .content h3{
+    font-family: 'nexa_lightregular';
+    color: #3397af;
+    padding-bottom: 30px;
+}
+.section-sobre .content h3 strong{
+    font-family: 'nexa_boldregular';
+    display: block;
+}
+.section-sobre .s{
+    position: absolute;
+    right: 190px;
+    bottom: -190px;
+    z-index: 1;
+}
+.section-missao-visao .s img {
+    width: 100%;
+}
+
+/* SOBRE - EQUIPE */
+.section-equipe, 
+.section-fabrica-games{
+    background: url(../images/bg-equipe.jpg) center no-repeat;
+    width: 100%;
+    height: 941px;
+    position: relative;
+}
+.section-equipe .content, 
+.section-fabrica-games .content{
+    max-width: 900px;
+    padding: 70px 0 20px;
+    margin: auto;
+}
+.section-equipe .content .title-section,
+.section-fabrica-games .content .title-section{
+    float: left;
+    padding: 70px 0 0 8px;
+    color: #4d4d4d;
+}
+.section-equipe .content .cards-equipe{
+    width: 100%;
+    padding-top: 40px;
+}
+.section-equipe .content .cards-equipe .person {
+    width: 100%;
+    max-width: 210px;
+    margin-right: 20px;
+    padding-bottom: 10px;
+}
+.section-equipe .content .cards-equipe .person:nth-child(4n+0),
+.section-equipe .content .cards-equipe .person:last-child {
+    margin-right: 0;
+}
+.section-equipe .content .cards-equipe .person .image{
+    text-align: center;
+}
+.section-equipe .content .cards-equipe .person .image img{
+    width: 100%;
+}
+.section-equipe .content .cards-equipe .person .info{
+    text-align: center;
+    padding-top: 20px;
+}
+.section-equipe .content .cards-equipe .person .info h3{
+    font-size: 17px;
+    font-family: 'nexa_lightregular';
+    color: #909090;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.section-equipe .content .cards-equipe .person .info p{
+    font-size: 14px;
+    font-family: 'nexa_boldregular';
+    color: #4d4d4d;
+    text-transform: uppercase;
+}
+.section-equipe .oculos {
+    position: absolute;
+    left: -140px;
+    bottom: -40px;
+}
+
+/* SOBRE - FABRICA DE GAMES */
+.section-fabrica-games{
+    background: url(../images/bg-fabrica.jpg) center no-repeat;
+    width: 100%;
+    height: 837px;
+}
+.section-fabrica-games .content {
+    width: 100%;
+    max-width: 970px;
+    height: 700px;
+    margin: 20px auto 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.section-fabrica-games .content .title-section {
+    color: #ffb607;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+.section-fabrica-games .content .text {
+    width: 100%;
+    max-width: 970px;
+    margin: initial;
+    padding: 0 10px;
+}
+.section-fabrica-games .content .text  p{
+    max-width: 500px;
+}
+.section-fabrica-games .content .text .quads {
+    display: flex;
+    width: 100%;
+    max-width: 970px;
+    margin: auto;
+    flex-direction: row;
+    flex: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+.section-fabrica-games .content .text .quads > div{
+    margin-right: 5px;
+}
+.section-fabrica-games .content .text .quads > div:last-child{
+    margin-right: 0;
+}
+.section-fabrica-games .content .text .quad1 {
+    width: 100%;
+    max-width: 340px;
+    float: left;
+    position: relative;
+}
+.section-fabrica-games .content .text .quad1 h2{
+    font-family: 'nexa_boldregular';
+    font-size: 36px;
+    color: #ff015b;
+    text-transform: uppercase;
+    position: absolute;
+    top: -30px;
+    left: -1px;
+}
+.section-fabrica-games .content .text .quad1 > div{
+    width: 100%;
+    max-width: 340px;
+    height: 340px;
+    background: #ff015b;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 20px 40px;
+}
+.section-fabrica-games .content .text .quad1 > div h3{
+    font-family: 'nexa_boldregular';
+    font-size: 44px;
+    line-height: 40px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.section-fabrica-games .content .text .quad1 > div p{
+    font-family: 'nexa_lightregular';
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+.section-fabrica-games .content .text .quad2,
+.section-fabrica-games .content .text .quad3{
+    width: 100%;
+    max-width: 300px;
+    float: left;
+    position: relative;
+}
+.section-fabrica-games .content .text .quad2 > div,
+.section-fabrica-games .content .text .quad3 > div{
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    padding: 30px;
+}
+.section-fabrica-games .content .text .quad2 > div {
+    background: url(../images/quad2.jpg) no-repeat center;
+}
+.section-fabrica-games .content .text .quad3 > div {
+    background: url(../images/quad3.jpg) no-repeat center;
+}
+
+.section-fabrica-games .content .text .quad2 h3,
+.section-fabrica-games .content .text .quad3 > div h3{
+    font-family: 'nexa_lightregular';
+    font-size: 22px;
+    line-height: 24px;
+    color: #ffffff;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.section-fabrica-games .content .text .quad2 h3 strong,
+.section-fabrica-games .content .text .quad3 > div h3 strong{
+    font-family: 'nexa_boldregular';
+}
+.section-fabrica-games .content .text .quad3 > h3 {
+    font-family: 'nexa_boldregular';
+    font-size: 30px;
+    line-height: 28px;
+    position: absolute;
+    color: #cecece;
+    right: 0;
+    bottom: -45px;
+    text-transform: uppercase;
+}
+
+.section-fabrica-games .oculos {
+    right: -110px;
+    left: auto !important;
+    bottom: -100px;
+}
+
+/* SOBRE - MISSAO E VISAO */
+.section-missao-visao{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.section-missao-visao .m{
+    float: left;
+    width: 35%;
+    margin-right: 5%;
+}
+.section-missao-visao .m img {
+    width: 100%;
+}
+.section-missao-visao .content{
+    float: left;
+    width: 60%;
+    padding: 0;
+    margin: 20px auto 0;
+    max-width: 550px;
+}
+.section-missao-visao .content .title-section{
+    color: #3397af;
+}
+.section-missao-visao .content h3{
+    font-family: 'nexa_boldregular';
+    font-size: 30px;
+    color: #ffb607;
+    text-transform: uppercase;
+    padding: 15px 0 5px;
+}
+.section-missao-visao .content h3 span:first-child {
+    margin-top: 12px;
+}
+.section-missao-visao .content h3 span{
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.section-missao-visao .content .list{
+    column-count: 2;
+    column-width: auto;
+    column-gap: 50px;
+}
+.section-missao-visao .content .list li{
+    font-size: 14px;
+    position: relative;
+    text-indent: 15px;
+    color: #686868;
+    padding-bottom: 2px;
+}
+.section-missao-visao .content .list li:before{
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #ffb607;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+/* SECTION REALIDADE VIRTUAL E AUMENTADA */
+.section-realidade-virtual-aumentada{
+    background: url(../images/bg-top-realidade-aumentada.jpg) top center no-repeat;
+    width: 100%;
+    min-height: 566px;
+    height: auto;
+    float: left;
+    position: relative;
+}
+
+.section-realidade-virtual-aumentada .content {
+    padding: 0 90px;
+}
+.section-realidade-virtual-aumentada .content .text:nth-child(1){
+    max-width: 400px;
+    padding-top: 280px;
+    margin-bottom: 50px;
+}
+.section-realidade-virtual-aumentada .content .title-section {
+    color: #3397af;
+    line-height: 48px;
+}
+.section-realidade-virtual-aumentada .content h3{
+    font-family: 'nexa_boldregular';
+    font-size: 24px;
+    color: #f2025c;
+    margin-bottom: 25px;
+}
+.section-realidade-virtual-aumentada .list {
+    column-count: 2;
+    column-width: auto;
+    column-gap: 50px;
+    margin-bottom: 0;
+}
+.section-realidade-virtual-aumentada .list.treinamentos li:before {
+    content: '';
+    background: #f2025c;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.section-realidade-virtual-aumentada .list.treinamentos li {
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+}
+.section-realidade-virtual-aumentada .list.treinamentos li p {
+    float: left;
+    margin: -9px 0 0 20px;
+}
+.section-realidade-virtual-aumentada .list li{
+    clear: both;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: start;
+    margin-bottom: 30px;
+}
+.section-realidade-virtual-aumentada .list li p{
+    float: left;
+    margin: -6px 0 0 20px;
+}
+.oculos-realidade-virtual-aumentada {
+    position: absolute;
+    bottom: 410px;
+    right: 22%;
+}
+.section-vr-treinamentos{
+    background: url(../images/bg-vr-treinamento.png) center no-repeat;
+    width: 100%; 
+    height: auto;
+    min-height: 542px;
+    clear: both;
+}
+.section-vr-treinamentos .content{
+    max-width: 390px
+}
+.section-vr-treinamentos .content h3{
+    font-family: 'nexa_boldregular';
+    font-size: 24px;
+    color: #f2025c;
+    margin-bottom: 25px;
+}
+.section-vr-treinamentos .content .text{
+    text-align: right;
+}
+.section-vr-treinamentos .man-vr{
+    padding-top: 100px;
+}
+.section-vr-treinamentos .man-vr img {
+    max-width: 503px;
+}
+.section-serious-games .container{
+    padding: 0 80px;
+}
+.section-serious-games .content{
+    padding-top: 30px;
+    width: 60%;
+}
+.section-serious-games .content h3{
+    font-family: 'nexa_boldregular';
+    font-size: 24px;
+    color: #f2025c;
+}
+.section-serious-games .content .list{
+    margin-bottom: 40px;
+}
+.section-serious-games .content .list li{
+    color: #686868;
+    font-size: 14px;
+    padding-bottom: 4px;
+}
+.section-serious-games .woman-vr {
+    width: 40%;
+}
+.section-serious-games .woman-vr img {
+    max-width: 529px;
+}
+.aumentada{
+    background: url(../images/aumentada.jpg) center bottom no-repeat;
+    width: 100%;
+    height: 777px;
+    position: absolute;
+    left: 0;
+    bottom: 100px;
+    z-index: -1;
+}
+.aumentada.eng{
+    background: url(../images/augmented.jpg) center bottom no-repeat;
+}
+
+/* SERIOUS GAMES */
+
+.section-top-serious-games{
+    background: url(../images/bg-serious-games.jpg) center no-repeat;
+    width: 100%; 
+    height: auto;
+    min-height: 633px;
+}
+.section-top-serious-games .content{
+    position: relative;
+}
+.section-top-serious-games .content .text {
+    max-width: 470px;
+    padding: 120px 0 0 70px;
+}
+.section-top-serious-games .content .text .title-section{
+    color: #3397af;
+    line-height: 44px;
+}
+.section-top-serious-games .content .img-top{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.section-text-serious .text{
+    padding: 0 50px 0 50px;
+}
+.section-text-serious .smartphone img{
+    max-width: 522px;
+}
+.list.serious-games li:before {
+    content: '';
+    background: #f2025c;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.list.serious-games li {
+    clear: both;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: start;
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+}
+.list.serious-games li p {
+    color: #686868;
+    float: left;
+    margin: -9px 0 0 20px;
+}
+
+/* GAMES */
+
+.section-top-games{
+    margin-top: -35px;
+    position: relative;
+}
+.section-top-games .bg{
+    background: url(../images/bg-games-top.jpg) center no-repeat;
+    width: 100%;
+    height: auto;
+    min-height: 475px;
+    clip-path: polygon(0 13%, 100% 8%, 100% 90%, 0 66%);
+    margin-top: -35px;
+}
+.section-top-games .content{
+    width: 50%;
+    float: left;
+    /* padding: 110px 100px 0; */
+    padding: 90px 10px 0 100px;
+}
+.section-top-games .content .text .title-section{
+    color: #fff;
+    line-height: 44px;
+}
+.section-top-games .content .text p{
+    color: #fff;
+}
+.section-top-games .gamepad{
+    width: 100%;
+    position: absolute;
+    /* top: 140px;
+    right: 8%; */
+    top: 115px;
+    right: 6%;
+    z-index: 1;
+}
+.section-top-games .gamepad img{
+    float: right;
+    max-width: 100%;
+}
+.section-dev{
+    background: url(../images/bg-dev.png) center no-repeat;
+    width: 100%;
+    height: auto;
+    min-height: 593px;
+    margin-top: -160px;
+    position: relative;
+    clip-path: polygon(0 0%, 100% 29%, 100% 90%, 0 100%);
+}
+.section-dev .container{
+    position: relative;
+    height: 543px;
+}
+.section-dev .content{
+    /* float: right;
+    width: 50%;
+    padding: 240px 70px 0; */
+    float: right;
+    width: 54%;
+    padding: 170px 40px 30px;
+}
+.section-dev .content .title-section{
+    color: #f6c30d;
+}
+.section-dev .lutador{
+    position: absolute;
+    left: -70px;
+    bottom: -1px;
+}
+.section-transforme{
+    background: url(../images/bg-games-realidade.jpg) center no-repeat;
+    width: 100%;
+    height: auto;
+    min-height: 829px;
+    margin-top: -40px;
+    position: relative;
+}
+.section-transforme .content{
+    width: 100%;
+    padding: 0 70px 0;
+    /* min-height: 540px; */
+    margin-top: 20px;
+    min-height: 570px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.section-transforme .content .title-section{
+    color: #00fec5;
+    line-height: 44px;
+}
+.section-transforme .content .text p{
+    color: #fff;
+}
+.section-contact-games {
+    top: -280px;
+    margin-bottom: -280px;
+    position: relative;
+}
+.section-contact-games .capacete{
+    max-width: 612px;
+}
+.section-contact-games h2{
+    font-family: 'nexa_lightregular';
+    line-height: 44px;
+    color: #3397af;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.section-contact-games h2 strong{
+    font-family: 'nexa_boldregular';
+}
+.section-contact-games p{
+    font-size: 20px;
+    font-family: 'nexa_lightregular';
+    padding-bottom: 30px;
+}
+.section-contact-games a{
+    background: #3397af;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+.section-contact-games a:hover{
+    background: #106174;
+}
+.list.games{
+    column-count: 1;
+    column-width: auto;
+    column-gap: 50px;
+    margin-bottom: 0;
+}
+.list.games li:before {
+    content: '';
+    background: #00fec5;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.list.games li {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+}
+.list.games li p {
+    color: #ffffff;
+    float: left;
+    margin: -9px 0 0 20px;
+}
+.list.games li ul{
+    width: 100%;
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    margin: 17px 0 0 20px;
+}
+.list.games li ul li:before {
+    content: '';
+    background: #00fec5;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* CASES */
+
+.section-cases{
+    background: url(../images/bg-top-cases.jpg) top center no-repeat;
+    width: 100%;
+    min-height: 276px;
+    height: auto;
+    float: left;
+    position: relative;
+    padding-bottom: 40px;
+}
+.section-cases h1{
+    color: #ffb607;
+}
+.section-cases .content .text {
+    float: right;
+    max-width: 550px;
+    padding: 80px 30px 0;
+}
+.section-cases-client{
+    background-size: cover !important;
+    margin-bottom: 30px;
+    width: 100%;
+    min-height: 200px;
+    padding: 35px 0;
+    float: left;
+}
+.section-cases-client.dominos{
+    background: url(../images/bg-cases-dominos.jpg) center no-repeat;
+}
+.section-cases-client.bejj{
+    background: url(../images/bg-cases-bejj.jpg) center no-repeat;
+}
+.section-cases-client:nth-child(even) .content .text{
+    width: 40%;
+    /* float: left; */
+    padding-right: 30px;
+    order: 1;
+}
+.section-cases-client:nth-child(even) .content .content-video{
+    width: 60%;
+    /* float: right; */
+    padding-left: 30px;
+    order: 2;
+}
+.section-cases-client:nth-child(odd) .content .text {
+    width: 40%;
+    /* float: right; */
+    padding-right: 30px;
+    order: 2;
+}
+.section-cases-client:nth-child(odd) .content .content-video{
+    width: 60%;
+    /* float: left; */
+    padding-right: 30px;
+    order: 1;
+}
+.section-cases-client .content .text .logo-client {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+.section-cases-client .content .text .logo-client img{
+    max-width: 100%;
+}
+.section-cases-client .content .text h2{
+    color: #3397af;
+    text-transform: uppercase;
+    font-family: 'nexa_boldregular';
+    font-size: 24px;
+}
+.section-cases-client .content .text .download-store h3{
+    color: #ffb607;
+    font-family: 'nexa_boldregular';
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+.section-cases-client .content .text .download-store a:first-of-type{
+    margin-right: 5px;
+}
+.section-cases-client .content .content-video{
+    padding: 30px 0;
+    position: relative;
+}
+.section-cases-client.dominos .content .content-video::before{
+    content: '';
+    background: url(../images/efeito-dominos.png);
+    width: 512px;
+    height: 484px;
+    position: absolute;
+    right: -168px;
+    top: -18px;
+}
+.section-cases-client.coca-cola .content .content-video::before{
+    content: '';
+    background: url(../images/efeito-coca.png);
+    width: 512px;
+    height: 519px;
+    position: absolute;
+    left: -120px;
+    top: -48px;
+}
+.section-cases-client.bejj .content .content-video::before{
+    content: '';
+    background: url(../images/efeito-bejj.png);
+    width: 512px;
+    height: 519px;
+    position: absolute;
+    right: -108px;
+    top: -38px;
+}
+.section-cases-client.str .content .content-video::before{
+    content: '';
+    background: url(../images/efeito-str.png);
+    width: 512px;
+    height: 519px;
+    position: absolute;
+    left: -130px;
+    top: -38px;
+}
+.section-cases-client .content .content-video .video{
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+.section-cases-client .content .content-video .video iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.list.cases li:before {
+    content: '';
+    background: #3397af;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.list.cases li {
+    clear: both;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: start;
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+}
+.list.cases li p {
+    color: #686868;
+    float: left;
+    margin: -9px 0 0 20px;
+}
+
+/* CALL TO ACTION */
+
+.section-banner-contact{
+    text-align: center;
+    padding: 100px 0 0;
+}
+.section-banner-contact h2{
+    font-size: 50px;
+    color: #ff0060;
+    text-transform: uppercase;
+    font-family: 'nexa_lightregular';
+}
+.section-banner-contact h2 strong{
+    font-family: 'nexa_boldregular';
+}
+.section-banner-contact p{
+    font-size: 20px;
+    font-family: 'nexa_lightregular';
+    padding-bottom: 30px;
+}
+.section-banner-contact a{
+    background: #ff0060;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+.section-banner-contact a:hover{
+    background: #8d0035;
+}
+
+/* CONTATO */
+.section-contact{
+    background: url(../images/bg-contato.jpg) top no-repeat;
+    width: 100%; 
+    min-height: 664px;
+    height: auto;
+    float: left;
+}
+.section-contact .content {
+    width: 60%;
+    float: right;
+    padding: 40px 40px 0;
+}
+.section-contact .content h1{
+    color: #ffb607;
+}
+.section-contact .content .info-contact {
+    margin: 10px 0 35px;
+}
+.section-contact .content .info-contact p,
+.section-contact .content .info-contact a{
+    font-family: 'bebas_neueregular';
+    font-size: 22px;
+    color: #566a7f;
+    font-weight: 900;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.section-contact .content .info-contact a{
+    display: block;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+.section-contact .content .info-contact a:hover{
+    color: #ffb607;
+}
+.section-contact .content .contact-form {
+    width: 100%;
+    height: auto;
+    float: left;
+    position: relative;
+}
+.section-contact .content .contact-form #form,
+.contact-form .wpcf7{
+    max-width: 360px;
+}
+.section-contact .content .contact-form .smash{
+    transform: rotate(-90deg);
+    position: absolute;
+    right: -20px;
+    bottom: 235px;
+}
+.section-contact .content .contact-form .smash p{
+    font-size: 92px;
+    text-transform: uppercase;
+    color: #f7f7f7;
+    font-family: 'nexa_boldregular';
+}
+.section-contact .content .contact-form .form-row{
+    float: left;
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+.section-contact .content .contact-form .form-row span{
+    width: 100%;
+}
+.section-contact .content .contact-form .form-row .ajax-loader.is-active {
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 10px;
+}
+.section-contact .content .contact-form .form-row label{
+    color:#505050;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    padding-bottom: 1px;
+}
+.section-contact .content .contact-form .form-row input:focus,
+.section-contact .content .contact-form .form-row textarea:focus{
+    outline: none;
+}
+.section-contact .content .contact-form .form-row input,
+.section-contact .content .contact-form .form-row textarea{
+    width: 100%;
+    font-size: 14px;
+    background: #efefef;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+.section-contact .content .contact-form .form-row textarea{
+    height: 100px;
+    resize: none;
+}
+.section-contact .content .contact-form .form-row button, 
+.section-contact .content .contact-form .form-row input[type=submit]{
+    background: #3397af !important;
+    width: auto;
+}
+.section-contact .content .contact-form .form-row button:hover,
+.section-contact .content .contact-form .form-row input[type=submit]:hover{
+    background: #000000 !important;
+}
+
+/* ERROR - CONTACT */
+
+span.wpcf7-not-valid-tip {
+    font-size: 12px;
+}
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing, div.wpcf7-mail-sent-ok {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+/* BEJJ */
+
+.section-banner-bejj {
+    position: relative;
+}
+.section-banner-bejj .bg {
+    background: url(../images/bejj-banner-top.jpg) center no-repeat;
+    width: 100%;
+    height: auto;
+    height: 685px;
+    clip-path: polygon(0 0%, 100% 0%, 100% 97%, 0 100%);
+    margin-top: 0;
+}
+.section-banner-bejj .bg .content{
+    height: 685px;
+}
+.section-banner-bejj .bg .content .text{
+    text-align: center;
+    max-width: 620px;
+}
+.section-banner-bejj .bg .content .text p{
+    color:#ffffff;
+    font-size: 22px;
+    font-weight: 300;
+}
+.section-banner-bejj .bg .content .text h1{
+    color: #ffb607;
+    padding-bottom: 0;
+}
+.section-banner-bejj .bg .content .text .download-store{
+    margin-top: 40px;
+}
+.section-banner-bejj .bg .content .text .download-store h3{
+    font-size: 18px;
+    font-family: 'nexa_boldregular';
+    color: #ffb607;
+    margin-bottom: 25px;
+}
+.section-banner-bejj .bg .content .text .download-store a{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.section-banner-bejj .bg .content .text .download-store a:last-of-type{
+    margin-right: 0;
+}
+.section-banner-bejj .bg .content .text .download-store .closed-beta{
+    font-family: 'nexa_boldregular';
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ffffff;
+}
+.section-banner-bejj .logo-bejj {
+    position: absolute;
+    bottom: -180px;
+}
+.section-banner-bejj .logo-bejj img{
+    max-width: 100%;
+    margin-left: 30px;
+}
+.section-prepare-se{
+    background: url(../images/bejj-bg-destaque.jpg) center;
+    width: 100%;
+    height: 909px;
+    margin-top: -20px;
+}
+.section-prepare-se .content{
+    height: 909px;
+    padding: 100px 0 200px 0;
+}
+.section-prepare-se .content .text{
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 60px;
+}
+.section-prepare-se .content .text .title-section{
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 50px;
+    padding-bottom: 30px;
+}
+.section-prepare-se .content .text .title-section strong{
+    display: block;
+}
+.section-prepare-se .content .text p{
+    color: #f8d03f;
+    font-size: 16px;
+    font-family: 'nexa_boldregular';
+    text-transform: uppercase;
+}
+.section-prepare-se .content .text .itens{
+    width: 100%;
+    float: left;
+}
+.section-prepare-se .content .itens li{
+    display: inline-block;
+    text-align: center;
+    width: 29%;
+    margin-right: 5%;
+}
+.section-prepare-se .content .itens li:last-child{
+    margin-right: 0;
+}
+.section-prepare-se .content .itens li img{
+    padding-bottom: 15px;
+}
+.section-prepare-se .content .itens li h3{
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'nexa_boldregular';
+    text-transform: uppercase;
+}
+.section-estrategia{
+    background: url(../images/bejj-bg-estrategia.png) center;
+    width: 100%;
+    height: 866px;
+    margin-top: -325px;
+}
+.section-estrategia .content {
+    height: 866px;
+    padding-top: 50px;
+}
+.section-estrategia .content .text{
+    width: 45%;
+    margin-right: 5%;
+    padding: 0 40px;
+    order: 1;
+}
+.section-estrategia .content .text .title-section{
+    color: #566a7f;
+}
+.section-estrategia .content .text p{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+}
+.section-estrategia .content .image{
+    width: 50%;
+    order: 2;
+}
+.section-estrategia .content .image img{
+    text-align: center;
+    margin: auto;
+    display: block;
+    max-width: 100%;
+}
+.section-realismo{
+    background: url(../images/bejj-bg-realismo.png) center;
+    width: 100%;
+    height: 708px;
+    margin-top: -222px;
+}
+.section-realismo .content {
+    height: 708px;
+    padding-top: 50px;
+}
+.section-realismo .content .text{
+    width: 45%;
+    margin-left: 5%;
+    padding: 0 40px;
+    order: 2;
+}
+.section-realismo .content .text .title-section{
+    color: #ffb607;
+}
+.section-realismo .content .text p{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+}
+.section-realismo .content .image{
+    width: 50%;
+    order: 1;
+}
+.section-realismo .content .image img{
+    text-align: center;
+    margin: auto;
+    display: block;
+    max-width: 100%;
+}
+.section-tecnica{
+    background: url(../images/bejj-bg-tecnica.png) center;
+    width: 100%;
+    height: 804px;
+    margin-top: -15px;
+}
+.section-tecnica .content {
+    height: 804px;
+}
+.section-tecnica .content .text{
+    width: 45%;
+    margin-left: 5%;
+    padding: 0 40px;
+    order: 1;
+}
+.section-tecnica .content .text .title-section{
+    color: #96afd1;
+}
+.section-tecnica .content .text p{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+}
+.section-tecnica .content .image{
+    width: 50%;
+    order: 2;
+}
+.section-tecnica .content .image img{
+    text-align: center;
+    margin: auto;
+    display: block;
+    max-width: 100%;
+}
+.section-feature{
+    background: url(../images/bejj-bg-features.png) center;
+    width: 100%;
+    height: 683px;
+    margin-top: -130px;
+}
+.section-feature .content {
+    height: 683px;
+}
+.section-feature .content .text{
+    width: 100%;
+    padding-top: 40px;
+}
+.section-feature .content .text .title-section{
+    text-align: center;
+    color:#566a7f;
+    margin-bottom: 15px;
+}
+.section-feature .content .text h3{
+    text-transform: uppercase;
+    color: #566a7f;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'nexa_boldregular';
+}
+.section-feature .content .image{
+    position: absolute;
+    right: 0;
+}
+.section-feature .content .text ul li{
+    color: #8f8f8f;
+    font-size: 16px;
+    font-family: 'nexa_boldregular';
+    text-transform: uppercase;
+    display: inline-block;
+    width: 29%;
+    margin-right: 5%;
+    margin-bottom: 4%;
+    padding-left: 30px;
+    position: relative;
+}
+.section-feature .content .text ul li::before{
+    content: '';
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background: #c7c7c7;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+.section-feature .content .text ul li:nth-child(3n+0){
+    margin-right: 0;
+}
+.section-closed-beta {
+    text-align: center;
+}
+.section-closed-beta img{
+    padding-bottom: 10px;
+}
+.section-closed-beta a{
+    color: #566a7f;
+    font-size: 14px;
+    font-family: 'nexa_boldregular';
+    text-transform: uppercase;
+}
+
+/* FOOTER */
+footer{
+   background: url(../images/bg-footer.jpg) center no-repeat;
+   width: 100%; 
+   height: auto;
+   min-height: 500px;
+   float: left;
+   text-align: center;
+}
+footer .info{
+    width: 100%;
+    margin-bottom: 50px;
+    float: left;
+}
+footer .info a{
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+footer .info a:hover{
+    color: #000;
+}
+footer .info a, footer .info p{
+    font-size: 30px;
+    line-height: 34px;
+    color: #566a7f;
+    text-transform: uppercase;
+    font-family: 'bebas_neueregular';
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-weight: 700;
+}
+footer .social{
+    width: 100%;
+    margin-bottom: 50px;
+    float: left;
+}
+footer .social a{
+    margin-right: 10px;
+    opacity: .8;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+footer .social a:hover{
+    opacity: 1;
+}
+
+footer .menu-footer{
+    width: 100%;
+    margin-bottom: 30px;
+    float: left;
+}
+footer .menu-footer ul li{
+    margin-right: 25px;
+}
+footer .menu-footer ul li:last-child{
+    margin-right: 0;
+}
+footer .menu-footer ul li a{
+    font-size: 18px;
+    color: #566a7f;
+    font-family: 'bebas_neueregular';
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+footer .menu-footer ul li a:hover{
+    color: #000;
+}
+footer .copy{
+    width: 100%;
+    float: left;
+}
+footer .copy p{
+    font-size: 12px;
+    color: #bababa;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1600px) {
+    /* BEJJ */
+    .section-feature .content .image {
+        right: -200px;
+    }
+    /* CARRO */
+    .section-games .carro {
+        right: -550px;
+        bottom: -230px;
+    }
+}
+@media (max-width: 1366px) {
+    /* CARRO */
+    .section-games .carro {
+        right: -680px;
+        bottom: -220px;
+    }
+
+        /* CONTATO */
+        .section-contact .content .contact-form .smash {
+            right: -120px;
+            bottom: 225px;
+        }
+}
+
+@media (max-width: 1280px) {
+
+    /* NAV */
+    .nav:last-child {
+        padding-right: 10px;
+    }
+
+    /* SOBRE */
+    .section-sobre .s {
+        right: 80px;
+    }
+    .section-equipe .oculos {
+        left: -250px;
+    }
+
+    /* CARRO */
+    .section-realidade-virtual .images-oculos img:nth-child(1) {
+        top: -160px;
+        right: 20px;
+    }
+    .section-realidade-virtual .images-oculos img:nth-child(2) {
+        /* top: 5px;
+        left: -100px; */
+        top: -5px;
+        left: -140px;
+    }
+    .section-realidade-virtual .images-oculos img:nth-child(3) {
+        /* top: 110px;
+        right: -40px; */
+        top: 120px;
+        right: 25px;
+    }
+    .section-realidade-virtual .images-oculos img:nth-child(4) {
+        top: 350px;
+        left: -80px;
+        /* left: -50px; */
+    }
+
+    /* REALIDADE VIRTUAL E AUMENTADA */
+    .oculos-realidade-virtual-aumentada {
+        right: 8%;
+        bottom: 450px;
+    }
+
+    /* SERIOUS GAMES */
+    .section-top-serious-games .content .text {
+        max-width: 420px;
+    }
+
+    /* GAMES */
+    .section-top-games .gamepad img {
+        max-width: 50%;
+    }
+    .section-top-games .content {
+        padding: 80px 60px 0;
+    }
+    .section-top-games .bg {
+        clip-path: polygon(0 13%, 100% 8%, 100% 90%, 0 80%);
+    }
+    .section-dev {
+        margin-top: -90px;
+        clip-path: polygon(0 0%, 100% 15%, 100% 90%, 0 100%);
+    }
+    .section-dev .content {
+        float: right;
+        width: 60%;
+        padding: 100px 70px 10px;
+    }
+    .section-dev .lutador {
+        left: -140px;
+    }
+    .section-transforme .content{
+        width: 100%;
+        padding: 75px 70px;
+    }
+
+    /* BEJJ */
+    .section-feature .content .image{
+        display: none;
+    }
+
+}
+@media (max-width: 1100px) {
+
+    /* SECTION REALIDADE VIRTUAL */
+    .section-realidade-virtual .content {
+        /* width: 40%;
+        max-width: 450px; */
+        width: 50%;
+        max-width: 450px;
+        padding: 0px 20px 30px;
+        text-align: right;
+    }
+
+    /* REALIDADE VIRTUAL E AUMENTADA */
+    .oculos-realidade-virtual-aumentada {
+        right: 7%;
+    }
+
+    /* SECTION SOBRE */
+    .section-sobre .s {
+        right: 20px;
+    }
+    .section-equipe .oculos {
+        left: -350px;
+    }
+    .section-missao-visao .m {
+        width: 40%;
+    }
+    .section-missao-visao .content {
+        width: 55%;
+    }
+
+    /* GAMES */
+    .section-top-games .gamepad img {
+        max-width: 60%;
+    }
+    .section-top-games .gamepad {
+        right: -3%;
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    /* TITLE */
+
+    .title-section {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    /* LOGO */
+    .logo {
+        left: 0;
+        margin-left: 0;
+    }
+
+    /* NAV */
+    .navbar-collapse {
+        position: absolute;
+        width: 100%;
+        top: 90px;
+        left: 0;
+        background: rgba(0,0,0,.8);
+    }
+    .navbar-collapse .nav{
+        flex-direction: column !important;
+    }
+    .navbar-collapse .nav .nav-item{
+        padding: 10px 20px;
+    }
+    .nav:first-child {
+        padding-left: 0;
+    }
+
+    /* HOME - DESTAQUE */
+    .section-banner-destaque{
+        height: auto;
+        margin-top: 0;
+        padding: 40px 20px;
+        clip-path: inherit;
+    }
+
+    /* SECTION - GAMES */
+    .section-games .gamepad {
+        margin-top: -130px;
+    }
+    .section-games .content {
+        max-width: 700px;
+        padding: 10px 100px 20px 10px;
+    }
+    .section-games .carro {
+        bottom: -250px;
+    }
+
+    /* SECTION - REALIDADE VIRTUAL */
+    .section-realidade-virtual{
+        height: auto;
+    }
+    .section-realidade-virtual .content {
+        width: 60%;
+        max-width: 500px;
+        padding: 140px 20px 20px;
+        text-align: right;
+    }
+    .section-realidade-virtual .images-oculos {
+        width: 40%;
+    }
+    .section-realidade-virtual .images-oculos img {
+        max-width: 240px;
+        top: 0 !important;
+        right: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        float: left;
+    }
+    /* REALIDADE VIRTUAL E AUMENTADA */
+    .aumentada{
+        display: none;
+    }
+    .oculos-realidade-virtual-aumentada {
+        right: 0%;
+    }
+    .section-realidade-virtual-aumentada .content,
+    .section-serious-games .container {
+        padding: 0;
+    }
+    .section-vr-treinamentos{
+        position: relative;
+    }
+    .section-vr-treinamentos .container {
+        display: block !important;
+    }
+    .section-vr-treinamentos .content{
+        float: right;
+        padding-top: 180px;
+        max-width: 350px;
+    }
+    .section-realidade-virtual-aumentada .content .title-section {
+        line-height: 30px;
+    }
+    .section-vr-treinamentos .man-vr {
+        padding-top: 0;
+        position: absolute;
+        left: -150px;
+        bottom: 0;
+    }
+
+    /* SECTION - SOBRE */
+    .section-fabrica-games{
+        width: 100%;
+        float: left;
+        padding-bottom: 30px !important;
+    }
+    .section-fabrica-games .content {
+        padding: 120px 0 150px;
+        width: 100%;
+        max-width: 100%;
+        margin: 30px auto;
+        height: auto;
+    }
+    .section-fabrica-games .content .title-section{
+        text-align: center;
+    }
+    .section-fabrica-games .content .text > p {
+        text-align: center;
+        margin: 0 auto 30px;
+    }
+    .section-fabrica-games .content .text .quads {
+        flex-wrap: wrap;
+    }
+    .section-fabrica-games .content .text .quad1 {
+        max-width: 100%;
+    }
+    .section-fabrica-games .content .text .quad1 h2 {
+        left: 31px;
+    }
+    .section-fabrica-games .content .text .quad1 > div {
+        width: 100%;
+        max-width: 605px;
+        margin: 0 auto 5px;
+        position: relative;
+        left: 2px;
+    }
+    .section-sobre .content{
+        padding-top: 25px;
+    }
+    .section-equipe .content .cards-equipe {
+        justify-content: start !important;
+    }
+    .section-equipe .content .cards-equipe .person:nth-child(4n+0){
+        margin-right: 20px;
+    }
+    .section-equipe .oculos{
+        display: none;
+    }
+    .section-sobre .s {
+        right: -100px;
+        bottom: -130px;
+    }
+    .section-sobre .content .text {
+        max-width: 370px;
+    }
+    .section-equipe {
+        height: auto;
+        background-size: cover;
+        padding-bottom: 200px;
+        clear: both;
+    }
+
+    /* SECTION - CLIENTES */
+    .section-clientes h2{
+        line-height: 44px;
+    }
+
+    /* SERIOUS GAMES */
+    .section-top-serious-games {
+        min-height: auto;
+        padding-bottom: 25px;
+    }
+    .section-top-serious-games .content .text {
+        max-width: 100%;
+        padding: 25px 0 0;
+    }
+    .section-top-serious-games .content .img-top{
+        display: none;
+    }
+    .section-text-serious .container {
+        flex-direction: column;
+    }
+    .section-text-serious .smartphone {
+        width: 100%;
+        padding: 50px 0;
+    }
+    .section-text-serious .smartphone img {
+        max-width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .section-text-serious .text {
+        padding: 0;
+    }
+    .section-banner-contact {
+        padding: 70px 0 0;
+    }
+    .section-banner-contact h2 {
+        font-size: 30px;
+    }
+    .section-banner-contact p {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+
+    /* GAMES */
+    
+    .section-top-games .bg{
+        clip-path: none;
+    }
+    .section-top-games .gamepad {
+        right: -3%;
+        top: 110px;
+    }
+    .section-dev {
+        height: auto;
+        min-height: auto;
+        margin-top: 0px;
+        position: relative;
+        clip-path: none;
+    }
+    .section-dev .content {
+        padding: 50px 30px 0;
+    }
+    .section-dev .lutador {
+        left: -280px;
+        bottom: 20px;
+    }
+    .section-transforme {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        margin-top: 0;
+        position: relative;
+        padding: 100px 0;
+        background-position: top;
+    }
+    .section-transforme .content {
+        width: 100%;
+        min-height: auto;
+        padding: 0;
+    }
+    .section-transforme .content .title-section {
+        line-height: 30px;
+    }
+    .section-contact-games {
+        top: 0;
+        margin-bottom: 0;
+        position: relative;
+    }
+    .section-contact-games .capacete {
+        margin-bottom: 40px;
+    }
+    .section-contact-games .container {
+        flex-direction: column;
+    }
+    .section-contact-games .content{
+        width: 100%;
+        text-align: center;
+    }
+
+    /* CASES */
+    .section-cases{
+        background-position: top left;
+    }
+    .section-cases .content .text {
+        float: left;
+        max-width: 300px;
+        padding: 80px 0px 0;
+    }
+    .section-cases-client.dominos .content .content-video::before,
+    .section-cases-client.coca-cola .content .content-video::before,
+    .section-cases-client.bejj .content .content-video::before,
+    .section-cases-client.str .content .content-video::before{
+        display: none;
+    }
+    .section-cases-client:nth-child(even){
+        background: #f6f6f6;
+    }
+    .section-cases-client:nth-child(odd){
+        background: #ffffff;
+    }
+    .section-cases-client:nth-child(even) .content .text,
+    .section-cases-client:nth-child(odd) .content .text {
+        width: 100%;
+        order: 1;
+        padding: 0;
+    }
+    .section-cases-client:nth-child(even) .content .content-video,
+    .section-cases-client:nth-child(odd) .content .content-video{
+        width: 100%;
+        order: 2;
+        padding: 30px 0 0;
+    }
+    .section-cases-client .content{
+        flex-direction: column;
+    }
+    .section-cases-client {
+        padding: 40px 0;
+        margin-bottom: 0;
+    }
+    
+
+    /* CONTATO */
+    .section-contact .content .contact-form .smash {
+        right: -240px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    /* BANNER */
+    .banner-home .carousel-item .content img{
+        max-width: 50px;
+        padding-bottom: 15px;
+    }
+    .banner-home .carousel-item .content p {
+        font-size: 16px;
+        max-width: 100%;
+        padding: 0px 50px 20px;
+    }
+    .banner-home .carousel-item .content h1 {
+        font-size: 18px;
+    }
+    
+
+    /* HOME */
+
+    .banner-home,
+    .banner-home .carousel-item, 
+    .banner-home .carousel-item .content {
+        height: 300px;
+    }
+    .banner-home .carousel-item.video-mobile .banner-video {
+        display: flex;
+    }
+    .banner-home .carousel-item.video-mobile .banner-video a img{
+        width: 130px;
+        opacity: 0.8;
+    }
+    .banner-home .carousel-item.video-mobile video{
+        display: none;
+    }
+    .section-games .gamepad {
+        margin-top: -90px;
+    }
+    .banner-home .carousel-item .content .btn.btn-primary {
+        font-size: 12px;
+        padding: 10px 40px 8px !important;
+    }
+
+    /* SECTION - GAMES */
+    .section-games {
+        min-height: auto;
+        background-position: right;
+    }
+    .section-games .gamepad img {
+        width: 100%;
+    }
+
+    /* SECTION - REALIDADE VIRTUAL */
+    .section-realidade-virtual{
+        background: url(../images/bg-realidade-virtual-mob.jpg) center no-repeat;
+        width: 100%;
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .section-realidade-virtual .images-oculos {
+        width: 100%;
+        padding-top: 150px;
+    }
+    .section-realidade-virtual .images-oculos img:nth-child(1),
+    .section-realidade-virtual .images-oculos img:nth-child(2),
+    .section-realidade-virtual .images-oculos img:nth-child(3){
+        display: none !important;
+    }
+    .section-realidade-virtual .content {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 10px;
+        text-align: left;
+    }
+
+    /* SECTION - CLIENTES */
+    .section-clientes h2 {
+        line-height: 36px;
+    }
+    .section-clientes h2 strong {
+        font-size: 36px;
+    }
+    .section-clientes .clientes .cliente {
+        margin-bottom: 10px;
+    }
+    .section-clientes .clientes .cliente:last-child{
+        margin-bottom: 0;
+    }
+
+    /* SECTION SOBRE */
+    .section-fabrica-games {
+        padding-bottom: 0 !important;
+    }
+    .section-fabrica-games .content {
+        padding: 30px 0 50px;
+    }
+    .section-fabrica-games .content .text .quad2, .section-fabrica-games .content .text .quad3 {
+        max-width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 5px;
+    }
+    .section-fabrica-games .content .text .quad2 > div, .section-fabrica-games .content .text .quad3 > div {
+        width: 100%;
+        max-width: 100%;
+    }
+    .section-fabrica-games .content .text .quad2 > div{
+        background: url(../images/quad2-mob.jpg) no-repeat center;
+    }
+    .section-fabrica-games .content .text .quad3 > div{
+        background: url(../images/quad3-mob.jpg) no-repeat center;
+    }
+    .section-equipe {
+        background: #efefef;
+        padding-bottom: 0px;
+        margin-bottom: 30px;
+    }
+    .section-sobre .s, 
+    .section-missao-visao .m{
+        display: none;
+    }
+    .section-missao-visao .content {
+        width: 100%;
+    }
+    .section-sobre .content .text {
+        max-width: 100%;
+    }
+    .section-equipe .content .title-section {
+        padding: 0;
+    }
+    .section-equipe .content .cards-equipe .person {
+        width: 100%;
+        max-width: 135px;
+    }
+
+    /* REALIDADE VIRTUAL E AUMENTADA  */
+    .section-realidade-virtual-aumentada{
+        background-size: contain;
+    }
+    .section-realidade-virtual-aumentada .content .title-section {
+        max-width: 320px;
+    }
+    .section-realidade-virtual-aumentada .content .text:nth-child(1) {
+        padding-top: 140px;
+    }
+    .section-vr-treinamentos{
+        background: #fafafa;
+    }
+    .section-vr-treinamentos .content {
+        float: right;
+        padding: 20px 0;
+        max-width: 100%;
+    }
+    .section-vr-treinamentos .content .text {
+        text-align: left;
+    }
+    .section-vr-treinamentos .man-vr {
+        padding-top: 0;
+        position: relative;
+        left: 0;
+        bottom: 0;
+    }
+    .oculos-realidade-virtual-aumentada {
+        display: none;
+    }
+    .section-realidade-virtual-aumentada .content, .section-serious-games .container {
+        padding: 0 15px;
+    }
+    .section-realidade-virtual-aumentada .list {
+        column-count: 1;
+    }
+    .section-serious-games .container {
+        flex-direction: column;
+    }
+    .section-serious-games .content {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .section-serious-games .woman-vr {
+        width: 100%;
+    }
+    .section-vr-treinamentos .man-vr img,
+    .section-serious-games .woman-vr img {
+        max-width: 100%;
+    }
+
+    /* GAMES */
+    .section-top-games {
+        margin-top: 0;
+        position: relative;
+        width: 100%;
+        float: left;
+        margin-bottom: -190px;
+    }
+    .section-top-games .bg {
+        clip-path: none;
+        min-height: auto;
+        margin-top: 0;
+        float: left;
+        padding-bottom: 40px;
+    }
+    .section-top-games .gamepad {
+        right: 0;
+        top: 0;
+        position: relative;
+    }
+    .section-top-games .content {
+        padding: 60px 0px 0;
+        width: 100%;
+    }
+    .section-top-games .gamepad img {
+        max-width: 80%;
+    }
+    .section-top-games .gamepad {
+        top: -40px;
+        position: relative;
+    }
+    .section-dev {
+        height: auto;
+        min-height: auto;
+        margin-top: 0px;
+        position: relative;
+        clip-path: none;
+        float: left;
+        width: 100%;
+        background: transparent;
+    }
+    .section-dev .container {
+        height: auto;
+    }
+    .section-dev .lutador {
+        left: 0px;
+        position: relative;
+    }
+    .section-dev .lutador img{
+        max-width: 80%;
+    }
+    .section-dev .content {
+        width: 100%;
+        padding: 150px 20px 50px;
+    }
+    .section-transforme {
+        clear: both;
+    }
+    .section-transforme .content { 
+        padding: 0 20px;
+    }
+    .section-contact-games h2 {
+        font-size: 30px;
+    }
+    .section-contact-games .capacete {
+        margin-top: -40px;
+    }
+    .section-contact-games .capacete img {
+        max-width: 100%;
+    }
+
+    /* BEJJ */
+    .section-banner-bejj .logo-bejj {
+        padding-left: 30px;
+    }
+    .section-realismo,
+    .section-estrategia,
+    .section-tecnica{
+        min-width: auto;
+    }
+    .section-estrategia .content,
+    .section-realismo .content,
+    .section-tecnica .content{
+        flex-direction: column;
+    }
+    .section-estrategia .content .text,
+    .section-realismo .content .text,
+    .section-tecnica .content .text {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 0 20px;
+        order: 2;
+    }
+    .section-estrategia .content .image,
+    .section-estrategia .content .image,
+    .section-tecnica .content .image,
+    .section-realismo .content .image {
+        width: 100%;
+        order: 1;
+        margin-bottom: 50px;
+    }
+    .section-feature .content .text ul li {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    /* CONTATO */
+    .section-contact .content {
+        width: 75%;
+    }
+    
+    /* FOOTER */
+    
+    .menu-footer ul {
+        flex-direction: column !important;
+    }
+    footer .menu-footer ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    footer .menu-footer ul li:last-child{
+        margin-bottom: 0;
+    }
+    footer .copy p {
+        font-size: 10px;
+        line-height: 18px;
+        padding: 0 20px;
+        color: #bababa;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    /* SECTION - CARRO */
+    .section-games .content {
+        max-width: 700px;
+        padding: 10px 10px 20px 10px;
+    }
+    .section-games .carro{
+        display: none !important;
+    }
+
+    /* SECTION - REALIDADE VIRTUAL */
+    .section-realidade-virtual .images-oculos {
+        padding-top: 70px;
+    }
+
+    /* SECTION - DESTAQUE */
+    .section-banner-destaque {
+        padding: 40px 20px 50px;
+    }
+    .section-banner-destaque .content h2 {
+        font-size: 30px;
+        color: #f8d03f;
+    }
+    .section-banner-destaque .content p {
+        max-width: 100%;
+        font-size: 16px;
+    }
+    .section-banner-destaque .content .buttons {
+        padding: 30px 0;
+    }
+
+    /* SECTION - SOBRE */
+    .section-equipe .content .cards-equipe .person {
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .section-missao-visao .content .list {
+        column-count: 1;
+    }
+
+    /* REALIDADE VIRTUAL E AUMENTADA */
+    .section-realidade-virtual-aumentada {
+        background: #fff;
+    }
+    .section-realidade-virtual-aumentada .content .text:nth-child(1) {
+        padding-top: 25px;
+    }
+    .section-realidade-virtual-aumentada .content .text:nth-child(1){
+        max-width: 100%;
+    }
+
+    /* CASES */
+    .section-cases .content .text {
+        max-width: 420px;
+    }
+    .section-cases-client .content .text .download-store a:first-of-type img{
+        max-width: 110px;
+    }
+    .section-cases-client .content .text .download-store a img{
+        max-width: 120px;
+    }
+    .section-cases-client .content .text .logo-client {
+        margin-bottom: 40px;
+    }
+    .section-cases-client .content .text .logo-client img {
+        max-width: 70%;
+        text-align: center;
+        margin: auto;
+        display: block;
+    }
+    .section-cases-client .content .text h2 {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    /* BEJJ */
+    .section-banner-bejj {
+        position: relative;
+        flex-direction: column;
+        height: 520px;
+    }
+    .section-banner-bejj .bg {
+        height: auto;
+        clip-path: none !important;
+        padding: 100px 0;
+        background-size: cover;
+    }
+    .section-banner-bejj .bg .content {
+        height: auto;
+        padding-top: 0;
+    }
+    .section-banner-bejj .bg .content .text h1 {
+        padding-bottom: 15px;
+    }
+    .section-banner-bejj .bg .content .text p {
+        font-size: 16px;
+    }
+    .section-banner-bejj .bg .content .text .download-store {
+        padding: 0 40px;
+    }
+    .section-banner-bejj .bg .content .text .download-store a {
+        margin-right: 0;
+        margin-bottom: 15px;
+        display: block;
+    }
+    .section-banner-bejj .bg .content .text .download-store a img {
+        max-width: 150px;
+    }
+    .section-banner-bejj .bg .content .text .download-store h3 {
+        font-size: 16px;
+    }
+    .section-banner-bejj .logo-bejj {
+        bottom: -140px;
+        padding-left: 0;
+        left: 50%;
+        margin-left: -144px;
+    }
+    .section-banner-bejj .logo-bejj img {
+        max-width: 300px;
+    }
+    .section-prepare-se {
+        background: #292e3a;
+        height: auto;
+        margin-top: 0;
+    }
+    .section-prepare-se .content{
+        height: auto;
+        padding: 130px 0 40px;
+    }
+    .section-prepare-se .content .text .title-section {
+        line-height: 32px;
+    }
+    .section-prepare-se .content .itens ul{
+        flex-direction: column;
+    }
+    .section-prepare-se .content .itens li {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .section-prepare-se .content .itens li:last-child{
+        margin-bottom: 0;
+    }
+    .section-prepare-se .content .itens li h3{
+        font-size: 14px;
+    }
+    .section-estrategia {
+        background: #fff;
+        margin-top: 0;
+        height: auto;
+    }
+    .section-estrategia .content .text p,
+    .section-tecnica .content .text p,
+    .section-feature .content .text ul li,
+    .section-realismo .content .text p,
+    .section-prepare-se .content .text p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+    .section-feature .content .text ul li{
+        margin-bottom: 10px;
+    }
+    .section-feature .content .text h3{
+        font-size: 18px;
+    }
+    .section-realismo{
+        background: #0e0e0e;
+    }
+    .section-realismo,
+    .section-tecnica,
+    .section-feature {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+    .section-tecnica {
+        background: #303946;
+    }
+    .section-tecnica .content,
+    .section-feature .content,
+    .section-realismo .content,
+    .section-estrategia .content{
+        padding: 40px 0;
+        height: auto;
+    }
+    .section-feature{
+        background: #f3f3f3;
+        margin-bottom: 50px;
+    }
+    .section-feature .content .text{
+        padding-top: 0;
+    }
+    .section-estrategia .content .text, 
+    .section-realismo .content .text, 
+    .section-tecnica .content .text {
+        text-align: center;
+    }
+    .section-tecnica .content .image img,
+    .section-realismo .content .image img,
+    .section-estrategia .content .image img {
+        max-width: 220px;
+    }
+
+    /* CONTATO */
+    .section-contact {
+        background: url(../images/bg-contato-mob.jpg) top no-repeat;
+        min-height: 443px;
+    }
+    .section-contact .content {
+        width: 100%;
+        padding: 440px 20px 0;
+    }
+    .section-contact .content .contact-form #form,
+    .contact-form .wpcf7 {
+        max-width: 100%;
+    }
+    .section-contact .content .contact-form .smash {
+        display: none;
+    }
+
+}
+
+@media (max-width: 460px) {
+
+    /* HOME */
+    /* .banner-home .carousel-item.video video {
+        width: 500px;
+    } */
+
+    /* GAMES */
+    .section-dev .content .title-section {
+        color: #f6c30d;
+        font-size: 24px;
+    }
+    .section-transforme {
+        padding: 50px 0;
+    }
+
+    /* SOBRE */
+    .section-fabrica-games .content .text .quad1 h2 {
+        left: 0px;
+    }
+    .section-fabrica-games .content .text .quad1 > div h3 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    /* FOOTER */
+    footer .info a, footer .info p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+@media (max-width: 350px) {
+
+    /* BEJJ */
+    .section-banner-bejj {
+        position: relative;
+        flex-direction: column;
+        height: 545px;
+    }
+    .section-prepare-se .content .text .title-section strong {
+        display: initial;
+    }
+
+}
