@@ -8,12 +8,18 @@ let easySafeEditor = {
     //watermark: null,
     editables: [],
 
+    /**
+     * Initializes the editor
+     */
     init: function() {
         this.tools.create();
         this.findEditables();
         this.tools.insertEditables(this.editables);
     },
 
+    /**
+     * Find on page, elements to edit
+     */
     findEditables: function() {
         var self = this;
         var elements = document.querySelectorAll("[data-edit='true']");

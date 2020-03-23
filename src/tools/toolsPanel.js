@@ -14,11 +14,16 @@ const toolsHTML = `
 </div>`;
 
 
-
+/**
+ * @class ToolsPanel manage aside panel for tools
+ */
 export default class ToolsPanel {
     constructor() {
     }
 
+    /**
+     * Create ptools panel on page
+     */
     create() {
         var body = document.getElementsByTagName("body")[0];
         body.innerHTML = toolsHTML + body.innerHTML;
@@ -27,6 +32,9 @@ export default class ToolsPanel {
         this.editableContainers = document.getElementById("easySafeTools_EditableContainers");
     }
 
+    /**
+     * Remove tools panel
+     */
     remove() {
         this.panelTool.remove();
         this.panelTool = null;
@@ -34,6 +42,10 @@ export default class ToolsPanel {
         this.editableContainers = null;
     }
 
+    /**
+     * Insert itens editables on panel
+     * @param {list} editables 
+     */
     insertEditables(editables) {
         for (var index in editables) {
             var editable = editables[index];
