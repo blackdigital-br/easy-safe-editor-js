@@ -1,7 +1,7 @@
 import BaseTextEditable from "./baseTextEditable.js";
 
-export default class TitleEditable extends BaseTextEditable {
-    
+export default class RichTextEditable extends BaseTextEditable {
+
     /**
      * 
      * @param {HTMLElement} element 

@@ -199,7 +199,8 @@
             <div class="container">
                 <div class="content">
                     <div class="text">
-                        <h1 class="title-section"><strong data-edit="true" data-type="title" data-label="Title">Sobre</strong></h1>
+                        <h1 class="title-section"><strong>Sobre</strong></h1>
+                        <div data-edit="true" data-type="richText" data-label="Texto Setor 1">
                         <p>A Smash Mountain Studio é uma empresa jovem com expertise em programação e computação gráfica, e é referência em desenvolvimento de experiências. Com inovação no centro da nossa atuação, buscamos sempre superar as expectativas dos nossos clientes e parceiros.</p>
                     
                         <p>Trabalhamos com criatividade, autenticidade e comprometimento, seguindo nossos valores em todos os nossos projetos. Competimos contra nós mesmos e lutamos para seguir no jogo, para reagir, adaptar, testar e superar expectativas. Temos um mindset cooperativo e de crescimento para atingir resultados extraordinários neste mundo globalizado. Seguimos na curva infinita do aprendizado e evolução constante.
@@ -208,6 +209,7 @@
                         <p>Tem-se o ditado de quando nos referimos ao fazer o impossível:</p>
                         
                         <h3>Brasileiros dizem: "a fé move montanhas"<br><br><strong>Para nós: “POR QUE MOVER, SE PODEMOS SMASH!"</strong></h3>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -222,9 +224,11 @@
         <section class="section-equipe section-fabrica-games">
             <div class="container">
                 <div class="content">
-                    <h2 class="title-section"><strong>FÁBRICA DE GAMES</strong></h2>
+                    <h2 class="title-section"><strong data-edit="true" data-type="text" data-label="Título Setor 2">FÁBRICA DE GAMES</strong></h2>
                     <div class="text">
-                        <p>Parceiro Técnico para empresas e startups no desenvolvimento de soluções complexas em GAMING e VR/AR.</p>
+                        <div data-edit="true" data-type="richText" data-label="Texto Setor 2">
+                            <p>Parceiro Técnico para empresas e startups no desenvolvimento de soluções complexas em GAMING e VR/AR.</p>
+                        </div>
 
                         <div class="quads">
                             <div class="quad1">
@@ -258,9 +262,9 @@
                     <img src="images/M.png" alt="Mountain" />
                 </div>
                 <div class="content">
-                    <h2 class="title-section"><strong>Missão & Visão</strong></h2>
+                    <h2 class="title-section"><strong data-edit="true" data-type="text" data-label="Título Setor 3">Missão & Visão</strong></h2>
 
-                    <div class="text" data-edit="true" data-type="text" data-label="Texto Setor 3">
+                    <div class="text" data-edit="true" data-type="richText" data-label="Texto Setor 3">
                         <p>A <strong>Smash Mountain Studio</strong> visa ser reconhecida globalmente como uma empresa 
                             de excelência no desenvolvimento de experiências inovadoras em tecnologia. Temos 
                             como missão Entreter, Facilitar e Transformar a vida de milhões de pessoas através dos 
@@ -319,6 +323,15 @@
         </div>
     </footer>
 </body>
+
+<div id="frameEdtitable" style="visibility: hidden;">
+    <h6 style="background-color: azure;">Nome Setor</h6>
+    <div class="frameActions" style="background-color: bisque;">
+        <button>A</button>
+        <button>B</button>
+        <button>C</button>
+    </div>
+</div>
 
 <!--  SCRIPTS  -->
 <script type='text/javascript' src='js/jquery-1.11.1.js'></script>

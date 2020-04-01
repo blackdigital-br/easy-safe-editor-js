@@ -1,0 +1,22 @@
+Home -
+	Slider - Vídeo
+	Slider - Banner (BG, Icon, title, desc, button e link)
+
+	Title - text - button - link
+
+	Banner (BG, Icon, title, desc, button e link)
+
+	Titulo (subtitul)
+	Imagens (limite?)
+
+Sobre -
+
+	Text
+	(imagem + texto)
+	
+Case -
+
+	Video, logo, title, text
+
+Beijj -
+	bg, title, text, img

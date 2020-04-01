@@ -1,14 +1,23 @@
 import Editable from  "./editable.js";
-import TitleEditable from "./titleEditable.js";
 import TextEditable from "./textEditable.js";
+import RichTextEditable from "./richTextEditable.js";
+
+import VideoEditable from "./videoEditable.js";
+import ImageEditable from "./imageEditable.js";
+import ButtonEditable from "./buttonEditable.js";
+import TemplateEditable from "./templateEditable.js";
 
 /**
  * Manager editables
  */
 let editableCores = {
     types: {
-        "title": TitleEditable,
         "text": TextEditable,
+        "richText": RichTextEditable,
+        "video": VideoEditable,
+        "image": ImageEditable,
+        "button": ButtonEditable,
+        "template": TemplateEditable,
         "default": Editable
     },
 

@@ -1,7 +1,6 @@
-import BaseTextEditable from "./baseTextEditable.js";
+import Editable from "./editable.js";
 
-export default class TextEditable extends BaseTextEditable {
-    
+export default class TemplateEditable extends Editable {
     /**
      * 
      * @param {HTMLElement} element 
