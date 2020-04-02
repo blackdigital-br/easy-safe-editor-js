@@ -61,7 +61,12 @@
             </div>
         </header>
         <div class="title-admin">
-            <h2>Você está editando a página: <strong>Sobre</strong> </h2>
+            <div class="flex align-items-center justify-content-center">
+                <h2>Você está editando a página: <strong>Sobre</strong> </h2>
+            </div>
+            <div class="btn-edit flex align-items-center justify-content-center">
+                <a href="#" title="Editar"><img src="images-admin/editar.svg" alt="Editar"/></a>
+            </div>
         </div>
         <div class="content-itens">
             <ul>
@@ -326,10 +331,20 @@
 
 <div id="frameEdtitable" style="visibility: hidden;">
     <h6 style="background-color: azure;">Nome Setor</h6>
-    <div class="frameActions" style="background-color: bisque;">
-        <button>A</button>
-        <button>B</button>
-        <button>C</button>
+    <div class="frameActions">
+        <button class="btn-edit upload"></button>
+        <button class="btn-edit img"></button>
+        <button class="btn-edit link"></button>
+        <button class="btn-edit indent-inc"></button>
+        <button class="btn-edit indent-dec"></button>
+        <button class="btn-edit left"></button>
+        <button class="btn-edit just"></button>
+        <button class="btn-edit center"></button>
+        <button class="btn-edit right"></button>
+        <button class="btn-edit size"></button>
+        <button class="btn-edit bold"></button> 
+        <button class="btn-edit italic"></button>
+        <button class="btn-edit under"></button>
     </div>
 </div>
 

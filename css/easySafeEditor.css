@@ -107,6 +107,25 @@
     padding: 15px;
     border-bottom: 1px solid #d4d4d4;
 }
+.menu-admin .title-admin > div{
+    flex: 80%;
+}
+.menu-admin .title-admin .btn-edit-title{
+    flex: 20%;
+    justify-content: flex-end;
+}
+.menu-admin .title-admin .btn-edit-title a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    transform: scale(1);
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+}
+.menu-admin .title-admin .btn-edit-title a:hover{
+    transform: scale(.9)
+}
 .menu-admin .title-admin h2{
     color: #656565;
     font-size: 16px;
@@ -143,6 +162,69 @@
     color: #000000;
     background: #f7f7f7;
 }
+
+/* FORMAT TEXT */
+
+.btn-edit{
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding: 14px !important;
+    background-size: contain !important;
+    margin-right: 10px;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    transform: scale(1);
+}
+.btn-edit:last-child{
+    margin-right: 0;
+}
+.btn-edit:hover{
+    transform: scale(.9);
+}
+.btn-edit.upload{
+    background: url(../sample/images-admin/txt-upload.svg) no-repeat center !important;
+}
+.btn-edit.img{
+    background: url(../sample/images-admin/txt-image.svg) no-repeat center !important;
+}
+.btn-edit.link{
+    background: url(../sample/images-admin/txt-link.svg) no-repeat center !important;
+}
+.btn-edit.indent-inc{
+    background: url(../sample/images-admin/txt-indent-inc.svg) no-repeat center !important;
+}
+.btn-edit.indent-dec{
+    background: url(../sample/images-admin/txt-indent-dec.svg) no-repeat center !important;
+}
+.btn-edit.left{
+    background: url(../sample/images-admin/txt-align-left.svg) no-repeat center !important;
+}
+.btn-edit.just{
+    background: url(../sample/images-admin/txt-align-just.svg) no-repeat center !important;
+}
+.btn-edit.center{
+    background: url(../sample/images-admin/txt-align-center.svg) no-repeat center !important;
+}
+.btn-edit.right{
+    background: url(../sample/images-admin/txt-align-right.svg) no-repeat center !important;
+}
+.btn-edit.size{
+    background: url(../sample/images-admin/txt-size.svg) no-repeat center !important;
+}
+.btn-edit.bold{
+    background: url(../sample/images-admin/txt-bold.svg) no-repeat center !important;
+}
+.btn-edit.italic{
+    background: url(../sample/images-admin/txt-italic.svg) no-repeat center !important;
+}
+.btn-edit.under{
+    background: url(../sample/images-admin/txt-underline.svg) no-repeat center !important;
+}
+
+
+
 
 /* BOTOES DE ACAO */
 

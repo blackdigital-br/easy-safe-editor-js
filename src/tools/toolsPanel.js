@@ -5,8 +5,13 @@ const toolsHTML = `
             <a href="#" title="Recolher Menu"><img src="images-admin/left.svg" alt="Recolher Menu"/></a>
         </div>
     </header>
-    <div class="title-admin">
-        <h2>Você está editando a página: <strong id="easySafeTools_PageTitle">Sobre</strong></h2>
+    <div class="title-admin d-flex align-items-center justify-content-center flex-row">
+        <div class="d-flex">
+            <h2>Você está editando a página: <strong>Sobre</strong> </h2>
+        </div>
+        <div class="btn-edit-title d-flex">
+            <a href="#" title="Editar"><img src="images-admin/editar.svg" alt="Editar"/></a>
+        </div>
     </div>
     <div class="content-itens">
         <ul id="easySafeTools_EditableContainers"></ul>
