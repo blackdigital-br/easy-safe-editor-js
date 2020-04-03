@@ -17,7 +17,8 @@ export default class BaseTextEditable extends Editable {
         this.element.setAttribute("contentEditable", true);
         var self = this;
         
-        this.element.onmouseenter = function(e) {
+        //this.element.onmouseenter = function(e) {
+        this.element.onfocus = function(e) {
             var frame = document.getElementById("frameEdtitable");
             frame.style.visibility = "visible";
             frame.style.position = "absolute";
