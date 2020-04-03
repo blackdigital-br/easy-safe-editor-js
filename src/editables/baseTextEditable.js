@@ -26,10 +26,10 @@ export default class BaseTextEditable extends Editable {
             frame.style.top = (getOffsetTop(self.element) - frame.offsetHeight) + "px";
         };
 
-        this.element.onmouseleave = function(e) {
+        /*this.element.onmouseleave = function(e) {
             var frame = document.getElementById("frameEdtitable");
             frame.style.visibility = "hidden";
-        };
+        };*/
     }
 
     
