@@ -16,7 +16,7 @@ let easySafeEditor = {
      * Initializes the editor
      */
     init: function() {
-        this.tools.create();
+        this.tools.create(this);
         this.frameTools.create();
         this.findEditables();
         this.tools.insertEditables(this.editables);
@@ -41,6 +41,8 @@ let easySafeEditor = {
      * @param {Editable} editable 
      */
     selectEditable: function(editable) {
+        editable.element.focus();
+
         if (this.editableSelected != editable) {
             this.editableSelected = editable;
             this.frameTools.showActions(this.editableSelected);

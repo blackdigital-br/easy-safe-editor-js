@@ -31,7 +31,8 @@ export default class ToolsPanel {
     /**
      * Create tools panel on page
      */
-    create() {
+    create(editor) {
+        this.editor = editor;
         var body = document.getElementsByTagName("body")[0];
         var nodePanel = createElement(toolsHTML);
         body.insertBefore(nodePanel, body.childNodes[0]);
@@ -57,7 +58,17 @@ export default class ToolsPanel {
     insertEditables(editables) {
         for (var index in editables) {
             var editable = editables[index];
-            this.editableContainers.appendChild(createElement(`<li><a href="#" title="${editable.label}">${editable.label}</a></li>`));
+            var editableSelectButton = createElement(`<li><a href="#" title="${editable.label}" data-index="${index}">${editable.label}</a></li>`);
+            editableSelectButton.firstChild.addEventListener("click", this.onSelectButtonClick);
+            this.editableContainers.appendChild(editableSelectButton);
         }
+    }
+
+    onSelectButtonClick = (event) => {
+        var index = event.target.getAttribute("data-index");
+        var editable = this.editor.editables[index];
+        editable.element.scrollIntoView({block: "center"});
+        this.editor.selectEditable(editable);
+        event.preventDefault();
     }
 }
