@@ -39,10 +39,10 @@ let editableCores = {
      * @param {HTMLElement} element
      * @returns Editable instance 
      */
-    createEditable: function(element) {
+    createEditable: function(editor, element) {
         var typeName = element.getAttribute("data-type");
         var type = this.findByType(typeName);
-        return new type(element);
+        return new type(editor, element);
     }
 };
 

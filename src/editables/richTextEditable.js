@@ -6,7 +6,7 @@ export default class RichTextEditable extends BaseTextEditable {
      * 
      * @param {HTMLElement} element 
      */
-    constructor(element) {
-        super(element);
+    constructor(editor, element) {
+        super(editor, element);
     }
 }

@@ -1,3 +1,5 @@
+import { createElement } from "../utils/element.js";
+
 const toolsHTML = `
 <div id="easySafeTools" class="menu-admin show">
     <header class="header-admin"><div class="d-flex justify-content-between align-items-center flex-row">
@@ -27,11 +29,12 @@ export default class ToolsPanel {
     }
 
     /**
-     * Create ptools panel on page
+     * Create tools panel on page
      */
     create() {
         var body = document.getElementsByTagName("body")[0];
-        body.innerHTML = toolsHTML + body.innerHTML;
+        var nodePanel = createElement(toolsHTML);
+        body.insertBefore(nodePanel, body.childNodes[0]);
         this.panelTool = document.getElementById("easySafeTools");
         this.pageTitle = document.getElementById("easySafeTools_PageTitle");
         this.editableContainers = document.getElementById("easySafeTools_EditableContainers");
@@ -54,7 +57,7 @@ export default class ToolsPanel {
     insertEditables(editables) {
         for (var index in editables) {
             var editable = editables[index];
-            this.editableContainers.innerHTML += `<li><a href="#" title="${editable.label}">${editable.label}</a></li>`;
+            this.editableContainers.appendChild(createElement(`<li><a href="#" title="${editable.label}">${editable.label}</a></li>`));
         }
     }
 }

@@ -5,7 +5,7 @@ export default class VideoEditable extends Editable {
      * 
      * @param {HTMLElement} element 
      */
-    constructor(element) {
-        super(element);
+    constructor(editor, element) {
+        super(editor, element);
     }
 }
