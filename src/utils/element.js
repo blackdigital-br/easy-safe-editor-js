@@ -7,3 +7,12 @@ export function createElements(html) {
     template.innerHTML = html.trim();
     return template.content.childNodes;
 }
+
+/**
+ * 
+ * @param {string} htmlText 
+ */
+export function removeHTML(htmlText) {
+    var regex = /(<([^>]+)>)/ig;
+    return htmlText.replace(regex, "");
+}
