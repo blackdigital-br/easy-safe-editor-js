@@ -7,43 +7,42 @@ import ImageEditable from "./imageEditable.js";
 import ButtonEditable from "./buttonEditable.js";
 import TemplateEditable from "./templateEditable.js";
 
-/**
- * Manager editables
- */
-let editableCores = {
-    types: {
-        "text": TextEditable,
-        "richText": RichTextEditable,
-        "video": VideoEditable,
-        "image": ImageEditable,
-        "button": ButtonEditable,
-        "template": TemplateEditable,
-        "default": Editable
-    },
+
+export default class EditableCore {
+    constructor() {
+    }
 
     /**
      * Find Editable type from name
      * @param {String} typeName 
      * @returns Editable Type
      */
-    findByType: function(typeName) {
-        if (typeName in this.types) {
-            return this.types[typeName];
+    static findByType(typeName) {
+        if (typeName in EditableCore.types) {
+            return EditableCore.types[typeName];
         }
-
-        return this.types["default"];
-    },
+    
+        return EditableCore.types["default"];
+    }
 
     /**
      * Create Editable by name type
      * @param {HTMLElement} element
      * @returns Editable instance 
      */
-    createEditable: function(editor, element) {
+    static createEditable(editor, element) {
         let typeName = element.getAttribute("data-type");
         let type = this.findByType(typeName);
         return new type(editor, element);
     }
-};
+}
 
-export default editableCores;
+EditableCore.types = {
+    "text": TextEditable,
+    "richText": RichTextEditable,
+    "video": VideoEditable,
+    "image": ImageEditable,
+    "button": ButtonEditable,
+    "template": TemplateEditable,
+    "default": Editable
+}

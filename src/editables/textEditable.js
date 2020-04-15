@@ -10,13 +10,14 @@ export default class TextEditable extends BaseTextEditable {
     constructor(editor, element) {
         super(editor, element);
 
-        element.addEventListener("input", this.onInput, true);
+        element.addEventListener("input", event => this.onInput(event), true);
     }
 
     /**
      * 
+     * @param {InputEvent} event 
      */
-    onInput = (event) => {
+    onInput(event) {
         let html = removeHTML(this.element.innerHTML);
 
         if (html != this.element.innerHTML) {

@@ -1,9 +1,10 @@
 import ToolsPanel from "./tools/toolsPanel.js";
 import FrameTools from "./tools/frameTools.js"
-import editableCores from "./editables/editableCore.js";
+import EditableCore from "./editables/editableCore.js";
 import Editable from "./editables/editable.js";
 
-let easySafeEditor = {
+
+var easySafeEditor = {
     tools: new ToolsPanel(),
     frameTools: new FrameTools(),
     //post: new Post(),
@@ -47,7 +48,7 @@ let easySafeEditor = {
 
         for (let i = 0; i < length; i++ ) {
             let element = elements[i];
-            let editable = editableCores.createEditable(this, element);
+            let editable = EditableCore.createEditable(this, element);
             this.editables.push(editable);
         }
     },

@@ -1,0 +1,30 @@
+{
+  "name": "easy-safe-editor",
+  "version": "0.5.0",
+  "description": "Easy Safe editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackdigital-br/easy-safe-editor-js.git"
+  },
+  "keywords": [
+    "grunt",
+    "uglify"
+  ],
+  "author": "TioRAC",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/blackdigital-br/easy-safe-editor-js/issues"
+  },
+  "devDependencies": {
+    "grunt": "1.1.0",
+    "load-grunt-tasks": "4.0.0",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-uglify-es": "3.3.0",
+    "grunt-shell": "^3.0.1",
+    "uglify-es": "3.3.9"
+  }
+}

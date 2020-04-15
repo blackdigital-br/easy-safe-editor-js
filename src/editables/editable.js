@@ -10,10 +10,14 @@ export default class Editable {
         this.element = element;
         this.editor = editor;
 
-        this.element.onfocus = this.onFocus;
+        this.element.addEventListener("focus", event => this.onElementFocus(event), true);
     }
 
-    onFocus = (event) => {
+    /**
+     * 
+     * @param {FocusEvent} event 
+     */
+    onElementFocus(event) {
         this.editor.selectEditable(this);
     }
 

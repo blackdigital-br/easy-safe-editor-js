@@ -1,13 +1,6 @@
 import { createElement } from "../utils/element.js";
 import { getOffsetTop, getOffsetLeft } from "../utils/offset.js";
 
-const toolsHTML = `
-<div id="frameEdtitable" style="visibility: hidden;">
-    <h6 id="frameEdtitable_frameTitle">Name</h6>
-    <div id="frameEdtitable_frameActions" class="frameActions">
-    </div>
-</div>`;
-
 /**
  * @class FrameTools manage aside panel for tools
  */
@@ -20,7 +13,7 @@ export default class FrameTools {
      */
     create() {
         let body = document.getElementsByTagName("body")[0];
-        body.appendChild(createElement(toolsHTML));
+        body.appendChild(createElement(FrameTools.toolsHTML));
         this.frameTool = document.getElementById("frameEdtitable");
         this.pageTitle = document.getElementById("frameEdtitable_frameTitle");
         this.actionsDiv = document.getElementById("frameEdtitable_frameActions");
@@ -61,3 +54,10 @@ export default class FrameTools {
         this.editableContainers = null;
     }
 }
+
+FrameTools.toolsHTML = `
+<div id="frameEdtitable" style="visibility: hidden;">
+    <h6 id="frameEdtitable_frameTitle">Name</h6>
+    <div id="frameEdtitable_frameActions" class="frameActions">
+    </div>
+</div>`;
