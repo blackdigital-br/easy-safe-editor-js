@@ -3,7 +3,7 @@ export function createElement(html) {
 }
 
 export function createElements(html) {
-    var template = document.createElement('template');
+    let template = document.createElement('template');
     template.innerHTML = html.trim();
     return template.content.childNodes;
 }
@@ -13,6 +13,6 @@ export function createElements(html) {
  * @param {string} htmlText 
  */
 export function removeHTML(htmlText) {
-    var regex = /(<([^>]+)>)/ig;
+    let regex = /(<([^>]+)>)/ig;
     return htmlText.replace(regex, "");
 }

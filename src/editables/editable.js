@@ -22,7 +22,7 @@ export default class Editable {
      * @param {Object} datas 
      */
     getValue(values) {
-        var value = this.element.innerHTML;
+        let value = this.element.innerHTML;
         value = value.replace(/\s\s+/g, ' ');
         values[this.label] = value;
         return values;

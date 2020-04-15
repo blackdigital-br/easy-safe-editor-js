@@ -26,7 +26,7 @@ let easySafeEditor = {
     },
 
     findTitle: function() {
-        var elements = document.querySelectorAll("[data-title='true']");
+        let elements = document.querySelectorAll("[data-title='true']");
 
         if (elements.length > 0) {
             this.titleElement = elements[0];
@@ -42,12 +42,12 @@ let easySafeEditor = {
      * Find on page, elements to edit
      */
     findEditables: function() {
-        var elements = document.querySelectorAll("[data-edit='true']");
-        var length = elements.length;
+        let elements = document.querySelectorAll("[data-edit='true']");
+        let length = elements.length;
 
-        for (var i = 0; i < length; i++ ) {
-            var element = elements[i];
-            var editable = editableCores.createEditable(this, element);
+        for (let i = 0; i < length; i++ ) {
+            let element = elements[i];
+            let editable = editableCores.createEditable(this, element);
             this.editables.push(editable);
         }
     },
@@ -66,11 +66,11 @@ let easySafeEditor = {
     },
 
     saveValues: function() {
-        var values = {};
+        let values = {};
         values["title"] = this.title;
 
-        for (var index in this.editables) {
-            var editable = this.editables[index];
+        for (let index in this.editables) {
+            let editable = this.editables[index];
             values = editable.getValue(values);
         }
 

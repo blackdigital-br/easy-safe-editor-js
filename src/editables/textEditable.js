@@ -17,17 +17,18 @@ export default class TextEditable extends BaseTextEditable {
      * 
      */
     onInput = (event) => {
-        var html = removeHTML(this.element.innerHTML);
+        let html = removeHTML(this.element.innerHTML);
 
         if (html != this.element.innerHTML) {
-            var pos = 0;
+            let pos = 0;
+            let sel = null;
 
             if (window.getSelection) {
-                var sel = window.getSelection();
+                sel = window.getSelection();
             
                 if (sel.getRangeAt) {
-                    var range = window.getSelection().getRangeAt(0);
-                    var preCaretRange = range.cloneRange();
+                    let range = window.getSelection().getRangeAt(0);
+                    let preCaretRange = range.cloneRange();
                     preCaretRange.selectNodeContents(this.element);
                     preCaretRange.setEnd(range.endContainer, range.endOffset);
                     pos = preCaretRange.toString().length;

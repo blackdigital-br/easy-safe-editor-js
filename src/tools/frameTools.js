@@ -19,7 +19,7 @@ export default class FrameTools {
      * Create tools panel on page
      */
     create() {
-        var body = document.getElementsByTagName("body")[0];
+        let body = document.getElementsByTagName("body")[0];
         body.appendChild(createElement(toolsHTML));
         this.frameTool = document.getElementById("frameEdtitable");
         this.pageTitle = document.getElementById("frameEdtitable_frameTitle");

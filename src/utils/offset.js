@@ -1,5 +1,5 @@
 export function getOffsetLeft(elem) {
-    var offset = 0;
+    let offset = 0;
     do {
         if ( !isNaN( elem.offsetLeft ) )
         {
@@ -11,7 +11,7 @@ export function getOffsetLeft(elem) {
 
 
 export function getOffsetTop(elem) {
-    var offset = 0;
+    let offset = 0;
     do {
         if ( !isNaN( elem.offsetTop ) )
         {

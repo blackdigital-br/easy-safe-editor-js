@@ -40,8 +40,8 @@ let editableCores = {
      * @returns Editable instance 
      */
     createEditable: function(editor, element) {
-        var typeName = element.getAttribute("data-type");
-        var type = this.findByType(typeName);
+        let typeName = element.getAttribute("data-type");
+        let type = this.findByType(typeName);
         return new type(editor, element);
     }
 };

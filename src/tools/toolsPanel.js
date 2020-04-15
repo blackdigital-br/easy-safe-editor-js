@@ -30,8 +30,8 @@ export default class ToolsPanel {
      */
     create(editor) {
         this.editor = editor;
-        var body = document.getElementsByTagName("body")[0];
-        var nodePanel = createElement(toolsHTML);
+        let body = document.getElementsByTagName("body")[0];
+        let nodePanel = createElement(toolsHTML);
         body.insertBefore(nodePanel, body.firstChild);
         this.panelTool = document.getElementById("easySafeTools");
         this.pageTitle = document.getElementById("easySafeTools_PageTitle");
@@ -76,17 +76,17 @@ export default class ToolsPanel {
      * @param {list} editables 
      */
     insertEditables(editables) {
-        for (var index in editables) {
-            var editable = editables[index];
-            var editableSelectButton = createElement(`<li><a href="#" title="${editable.label}" data-index="${index}">${editable.label}</a></li>`);
+        for (let index in editables) {
+            let editable = editables[index];
+            let editableSelectButton = createElement(`<li><a href="#" title="${editable.label}" data-index="${index}">${editable.label}</a></li>`);
             editableSelectButton.firstChild.addEventListener("click", this.onSelectButtonClick);
             this.editableContainers.appendChild(editableSelectButton);
         }
     }
 
     onSelectButtonClick = (event) => {
-        var index = event.target.getAttribute("data-index");
-        var editable = this.editor.editables[index];
+        let index = event.target.getAttribute("data-index");
+        let editable = this.editor.editables[index];
         editable.element.scrollIntoView({block: "center"});
         this.editor.selectEditable(editable);
         event.preventDefault();
