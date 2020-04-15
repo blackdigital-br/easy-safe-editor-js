@@ -131,11 +131,20 @@
     font-size: 16px;
     margin-bottom: 0;
 }
-.menu-admin .title-admin h2 strong{
+.menu-admin .title-admin h2 input {
     font-size: 20px;
     display: block;
     color: #333333;
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px #333 solid;
+    margin-top: 10px;
 }
+
+.menu-admin .title-admin h2 input:focus {
+    outline: none;
+}
+
 .menu-admin .content-itens{
     width: 100%;
     height: auto;

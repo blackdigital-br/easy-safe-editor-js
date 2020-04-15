@@ -4,15 +4,12 @@ const toolsHTML = `
 <div id="easySafeTools" class="menu-admin show">
     <header class="header-admin"><div class="d-flex justify-content-between align-items-center flex-row">
         <div class="recolher-menu d-flex align-items-center justify-content-center"">
-            <a href="#" title="Recolher Menu"><img src="images-admin/left.svg" alt="Recolher Menu"/></a>
+            <a id="easySafeTools_collapsePanel" href="#" title="Recolher Menu"><img src="images-admin/left.svg" alt="Recolher Menu"/></a>
         </div>
     </header>
     <div class="title-admin d-flex align-items-center justify-content-center flex-row">
         <div class="d-flex">
-            <h2>Você está editando a página: <strong>Sobre</strong> </h2>
-        </div>
-        <div class="btn-edit-title d-flex">
-            <a href="#" title="Editar"><img src="images-admin/editar.svg" alt="Editar"/></a>
+            <h2>Você está editando a página: <input id="easySafeTools_PageTitle" type="text" value="Sobre"></input> </h2>
         </div>
     </div>
     <div class="content-itens">
@@ -35,10 +32,16 @@ export default class ToolsPanel {
         this.editor = editor;
         var body = document.getElementsByTagName("body")[0];
         var nodePanel = createElement(toolsHTML);
-        body.insertBefore(nodePanel, body.childNodes[0]);
+        body.insertBefore(nodePanel, body.firstChild);
         this.panelTool = document.getElementById("easySafeTools");
         this.pageTitle = document.getElementById("easySafeTools_PageTitle");
         this.editableContainers = document.getElementById("easySafeTools_EditableContainers");
+        this.collapseButton = document.getElementById("easySafeTools_collapsePanel");
+
+        this.collapseButton.addEventListener("click", this.onCollapseButtonClick, true);
+
+        this.pageTitle.value = this.editor.title;
+        this.pageTitle.addEventListener("input", this.onChangeTitle, true);
     }
 
     /**
@@ -49,6 +52,23 @@ export default class ToolsPanel {
         this.panelTool = null;
         this.pageTitle = null;
         this.editableContainers = null;
+    }
+
+    showTools() {
+        this.panelTool.classList.remove("show");
+        this.panelTool.classList.add("hidden");
+    }
+
+    hiddenTools() {
+        this.panelTool.classList.remove("hidden");
+        this.panelTool.classList.add("show");
+    }
+
+    toggleTools() {
+        if (this.panelTool.classList.contains("show"))
+            this.showTools();   
+        else
+            this.hiddenTools();
     }
 
     /**
@@ -70,5 +90,15 @@ export default class ToolsPanel {
         editable.element.scrollIntoView({block: "center"});
         this.editor.selectEditable(editable);
         event.preventDefault();
+    }
+
+    onCollapseButtonClick = (event) => {
+        this.toggleTools();
+        event.preventDefault();
+    }
+
+    onChangeTitle = (event) => {
+        this.editor.title = event.target.value;
+        this.editor.titleElement.innerText = event.target.value;
     }
 }

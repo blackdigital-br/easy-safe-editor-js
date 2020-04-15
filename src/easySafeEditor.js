@@ -11,15 +11,31 @@ let easySafeEditor = {
     //watermark: null,
     editables: [],
     editableSelected: null,
+    title: "",
+    titleElement: null,
 
     /**
      * Initializes the editor
      */
     init: function() {
+        this.findTitle();
         this.tools.create(this);
         this.frameTools.create();
         this.findEditables();
         this.tools.insertEditables(this.editables);
+    },
+
+    findTitle: function() {
+        var elements = document.querySelectorAll("[data-title='true']");
+
+        if (elements.length > 0) {
+            this.titleElement = elements[0];
+            this.title = elements[0].innerText;
+        }
+        else {
+            console.log("No title!");
+            this.titleElement = document.createTextNode(this.title);
+        }
     },
 
     /**
@@ -51,6 +67,7 @@ let easySafeEditor = {
 
     saveValues: function() {
         var values = {};
+        values["title"] = this.title;
 
         for (var index in this.editables) {
             var editable = this.editables[index];
