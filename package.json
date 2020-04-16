@@ -4,7 +4,8 @@
   "description": "Easy Safe editor",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "grunt": "grunt",
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -20,11 +21,16 @@
     "url": "https://github.com/blackdigital-br/easy-safe-editor-js/issues"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
     "grunt": "1.1.0",
-    "load-grunt-tasks": "4.0.0",
     "grunt-contrib-concat": "1.0.1",
     "grunt-contrib-uglify-es": "3.3.0",
     "grunt-shell": "^3.0.1",
-    "uglify-es": "3.3.9"
+    "load-grunt-tasks": "4.0.0",
+    "uglify-es": "3.3.9",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }

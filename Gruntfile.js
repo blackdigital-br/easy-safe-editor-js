@@ -24,7 +24,7 @@ module.exports = function(grunt){
                 banner: "//BlackDigital 2020",
                 sourceMap: false,
                 report: "min",
-                beautify: true,
+                beautify: false,
                 output: {
                     "ascii_only": true
                 },
