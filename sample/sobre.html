@@ -37,7 +37,6 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/custom.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../css/easySafeEditor.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -353,17 +352,39 @@
 <script type='text/javascript' src='js/bootstrap.min.js'></script>
 <script type='text/javascript' src='js/functions.js'></script>
 
-<script src='../dist/easySafeEditor.min.js'></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+    var head = document.getElementsByTagName('HEAD')[0];
+    url = new URL(window.location.href);
+    
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';  
+    link.type = 'text/css'; 
+
+    var script = document.createElement('script');
+
+    if (url.searchParams.has('dist')) {
+        link.href = '../dist/easySafeEditor.min.css';
+        script.src = "../dist/easySafeEditor.min.js";
+    }
+    else {
+        link.href = '../css/easySafeEditor.css';
+        script.src = "../src/easySafeEditor.js";
+        script.type = "module";
+    }
+
+    head.appendChild(link);
+    head.appendChild(script);
+
+    setTimeout(testScriptAfterLoad, 1000);
+});
 
 
-<!--script async type="module">
-    //import easySafeEditor from "../src/easySafeEditor.js";
-    import easySafeEditor from "../dist/easySafeEditor.min.js";
-    easySafeEditor.init();
+function testScriptAfterLoad() {
+    console.log(window.easySafeEditor);
+}
 
-    jQuery("#botaoTeste").click(function() {
-        easySafeEditor.saveValues();
-    });
-</script-->
+</script>
 
 </html>

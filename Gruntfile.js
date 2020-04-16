@@ -1,23 +1,38 @@
 module.exports = function(grunt){
 
-    let orderFiles = [
-        "src/utils/*.js", 
-        "src/editables/editable.js", 
-        "src/editables/baseTextEditable.js", 
-        "src/editables/buttonEditable.js", 
-        "src/editables/imageEditable.js", 
-        "src/editables/richTextEditable.js", 
-        "src/editables/templateEditable.js", 
-        "src/editables/textEditable.js", 
-        "src/editables/videoEditable.js", 
-        "src/editables/editableCore.js", 
-        "src/tools/*.js", 
-        "src/easySafeEditor.js"
-    ];
-
-    grunt.loadNpmTasks('grunt-contrib-concat');
+    const webpackConfig = require('./webpack.config');
+    const path = require('path');
 
 	grunt.initConfig({
+        webpack: {
+            options: {
+              stats: !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+            },
+            prod: webpackConfig,
+            //dev: Object.assign({ watch: true }, webpackConfig)
+        },
+        cssmin: {
+            options: {
+              mergeIntoShorthands: false,
+              roundingPrecision: -1
+            },
+            target: {
+              files: {
+                './dist/easySafeEditor.min.css': ['./css/easySafeEditor.css']
+              }
+            }
+        },
+        compress: {
+            main: {
+              options: {
+                archive: './dist/archive.zip'
+              },
+              files: [
+                { expand: false, src: ['./dist/*.js'], dest: 'js/', filter: 'isFile'},
+                { expand: false, src: ['./dist/*.css'], dest: 'css/'},
+              ]
+            }
+          },
         uglify: {
 			options: {
                 preserveComments: false,
@@ -41,5 +56,5 @@ module.exports = function(grunt){
 	});
 
     require( "load-grunt-tasks" )( grunt );
-    grunt.registerTask( "default", [ "uglify" ]);
+    grunt.registerTask( "default", [ "webpack", "cssmin" ]);
 }
