@@ -34,7 +34,7 @@ module.exports = function(grunt){
                 }
 			},
 			all: {
-                src: orderFiles,
+                src: "dist/easySafeEditor.min.js",
                 dest: "dist/easySafeEditor.min.js"
 			}
         }

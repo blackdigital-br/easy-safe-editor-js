@@ -79,4 +79,5 @@ var easySafeEditor = {
     }
 };
 
+easySafeEditor.init();
 export default easySafeEditor;
