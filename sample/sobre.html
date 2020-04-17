@@ -354,6 +354,17 @@
 
 <script>
 
+easySafeEditorOptions = {
+    labels: {
+        save: "Salvar",
+        cancel: "Cancelar"
+    },
+    actions: {
+        save: function(values) { console.log(values) },
+        cancel: function() { console.log("Cancel") }
+    }
+};
+
 document.addEventListener("DOMContentLoaded", function(event) { 
     var head = document.getElementsByTagName('HEAD')[0];
     url = new URL(window.location.href);

@@ -1,14 +1,15 @@
-import ToolsPanel from "./tools/toolsPanel.js";
+import SideTools from "./tools/sideTools.js";
 import FrameTools from "./tools/frameTools.js"
+import ActionBar from "./tools/actionBar.js";
 import EditableCore from "./editables/editableCore.js";
 import Editable from "./editables/editable.js";
 
 
 var easySafeEditor = {
-    tools: new ToolsPanel(),
+    asideTools: new SideTools(),
     frameTools: new FrameTools(),
     //post: new Post(),
-    //actionBar: new ActionBar(),
+    actionBar: new ActionBar(),
     //watermark: null,
     editables: [],
     editableSelected: null,
@@ -20,10 +21,12 @@ var easySafeEditor = {
      */
     init: function() {
         this.findTitle();
-        this.tools.create(this);
+        this.asideTools.create();
         this.frameTools.create();
+        this.actionBar.create();
+
         this.findEditables();
-        this.tools.insertEditables(this.editables);
+        this.asideTools.insertEditables(this.editables);
     },
 
     findTitle: function() {
@@ -66,6 +69,35 @@ var easySafeEditor = {
         }
     },
 
+    getOptions: function() {
+        let options = {};
+
+        if (typeof easySafeEditorOptions !== 'undefined') {
+            options = easySafeEditorOptions;
+        }
+
+        if (!("labels" in options))
+            options["labels"] = {};
+
+        if (!("actions" in options))
+            options["actions"] = {};
+
+        let defaultLabels = {
+            save: "Save",
+            cancel: "Cancel"
+        };
+
+        let defaultActions = {
+            save: function(){},
+            cancel: function(){}
+        };
+
+        options["labels"] = Object.assign(defaultLabels, options["labels"]);
+        options["actions"] = Object.assign(defaultActions, options["actions"]);
+
+        return options;
+    },
+
     saveValues: function() {
         let values = {};
         values["title"] = this.title;
@@ -75,8 +107,16 @@ var easySafeEditor = {
             values = editable.getValue(values);
         }
 
-        console.log(values);
+        let saveOk = false;
+
+        try {
+            saveOk = this.getOptions()["actions"]["save"](values);
+        }
+        catch {
+            saveOk = false;
+        }
     }
+
 };
 
 window.easySafeEditor = easySafeEditor;

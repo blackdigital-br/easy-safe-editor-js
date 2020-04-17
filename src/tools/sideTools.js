@@ -1,19 +1,18 @@
 import { createElement } from "../utils/element.js";
 
 /**
- * @class ToolsPanel manage aside panel for tools
+ * @class ASideTools manage aside panel for tools
  */
-export default class ToolsPanel {
+export default class SideTools {
     constructor() {
     }
 
     /**
      * Create tools panel on page
      */
-    create(editor) {
-        this.editor = editor;
+    create() {
         let body = document.getElementsByTagName("body")[0];
-        let nodePanel = createElement(ToolsPanel.toolsHTML);
+        let nodePanel = createElement(SideTools.toolsHTML);
         body.insertBefore(nodePanel, body.firstChild);
         this.panelTool = document.getElementById("easySafeTools");
         this.pageTitle = document.getElementById("easySafeTools_PageTitle");
@@ -22,7 +21,7 @@ export default class ToolsPanel {
 
         this.collapseButton.addEventListener("click", (event) => this.onCollapseButtonClick(event), true);
 
-        this.pageTitle.value = this.editor.title;
+        this.pageTitle.value = window.easySafeEditor.title;
         this.pageTitle.addEventListener("input", (event) => this.onChangeTitle(event), true);
     }
 
@@ -72,9 +71,9 @@ export default class ToolsPanel {
      */
     onSelectButtonClick(event) {
         let index = event.target.getAttribute("data-index");
-        let editable = this.editor.editables[index];
+        let editable = window.easySafeEditor.editables[index];
         editable.element.scrollIntoView({block: "center"});
-        this.editor.selectEditable(editable);
+        window.easySafeEditor.selectEditable(editable);
         event.preventDefault();
     }
 
@@ -92,12 +91,12 @@ export default class ToolsPanel {
      * @param {InputEvent} event 
      */
     onChangeTitle(event) {
-        this.editor.title = event.target.value;
-        this.editor.titleElement.innerText = event.target.value;
+        window.easySafeEditor.title = event.target.value;
+        window.easySafeEditor.titleElement.innerText = event.target.value;
     }
 }
 
-ToolsPanel.toolsHTML = `
+SideTools.toolsHTML = `
 <div id="easySafeTools" class="menu-admin show">
     <header class="header-admin"><div class="d-flex justify-content-between align-items-center flex-row">
         <div class="recolher-menu d-flex align-items-center justify-content-center"">
