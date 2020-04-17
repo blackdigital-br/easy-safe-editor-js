@@ -14,15 +14,18 @@ export default class ActionBar {
         let html = ActionBar.HTML;
         html = html.replace("{save}", window.easySafeEditor.getOptions()["labels"]["save"]);
         html = html.replace("{cancel}", window.easySafeEditor.getOptions()["labels"]["cancel"]);
+        html = html.replace("{draft}", window.easySafeEditor.getOptions()["labels"]["draft"]);
 
         body.appendChild(createElement(html));
 
         this.actionBar = document.getElementById("easyActionBar")
         this.saveButton = document.getElementById("easyActionBar_save");
         this.cancelButton = document.getElementById("easyActionBar_cancel");
+        this.draftButton = document.getElementById("easyActionBar_draft");
 
         this.saveButton.addEventListener("click", (event) => this.onSaveClickButton(event), true);
         this.cancelButton.addEventListener("click", (event) => this.onCancelClickButton(event), true);
+        this.draftButton.addEventListener("click", (event) => this.onDraftClickButton(event), true);
     }
 
     /**
@@ -30,7 +33,7 @@ export default class ActionBar {
      * @param {MouseEvent} event 
      */
     onSaveClickButton(event) {
-        window.easySafeEditor.saveValues();
+        window.easySafeEditor.post.savePost();
         event.preventDefault();
     }
 
@@ -39,6 +42,15 @@ export default class ActionBar {
      * @param {MouseEvent} event 
      */
     onCancelClickButton(event) {
+        event.preventDefault();
+    }
+
+    /**
+     * 
+     * @param {MouseEvent} event 
+     */
+    onDraftClickButton(event) {
+        window.easySafeEditor.post.savePost("draft");
         event.preventDefault();
     }
 }
@@ -52,6 +64,16 @@ ActionBar.HTML = `
             </div>
             <div class="texto">
                 <p>{save}</p>
+            </div>
+        </a> 
+    </div>
+    <div class="raschunho">
+        <a id="easyActionBar_draft" href="#" title="Raschunho">
+            <div class="img d-flex align-items-center justify-content-center">
+                <img src="images-admin/rascunho.svg" alt="Raschunho"/>
+            </div>
+            <div class="texto">
+                <p>{draft}</p>
             </div>
         </a> 
     </div>

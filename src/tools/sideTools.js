@@ -21,7 +21,7 @@ export default class SideTools {
 
         this.collapseButton.addEventListener("click", (event) => this.onCollapseButtonClick(event), true);
 
-        this.pageTitle.value = window.easySafeEditor.title;
+        this.pageTitle.value = window.easySafeEditor.post.getTitle();
         this.pageTitle.addEventListener("input", (event) => this.onChangeTitle(event), true);
     }
 
@@ -91,8 +91,7 @@ export default class SideTools {
      * @param {InputEvent} event 
      */
     onChangeTitle(event) {
-        window.easySafeEditor.title = event.target.value;
-        window.easySafeEditor.titleElement.innerText = event.target.value;
+        window.easySafeEditor.post.setTitle(event.target.value);
     }
 }
 

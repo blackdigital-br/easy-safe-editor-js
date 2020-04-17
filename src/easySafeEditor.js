@@ -1,3 +1,4 @@
+import Post from "./components/post.js";
 import SideTools from "./tools/sideTools.js";
 import FrameTools from "./tools/frameTools.js"
 import ActionBar from "./tools/actionBar.js";
@@ -8,7 +9,7 @@ import Editable from "./editables/editable.js";
 var easySafeEditor = {
     asideTools: new SideTools(),
     frameTools: new FrameTools(),
-    //post: new Post(),
+    post: new Post(),
     actionBar: new ActionBar(),
     //watermark: null,
     editables: [],
@@ -20,26 +21,13 @@ var easySafeEditor = {
      * Initializes the editor
      */
     init: function() {
-        this.findTitle();
+        this.post.create();
         this.asideTools.create();
         this.frameTools.create();
         this.actionBar.create();
 
         this.findEditables();
         this.asideTools.insertEditables(this.editables);
-    },
-
-    findTitle: function() {
-        let elements = document.querySelectorAll("[data-title='true']");
-
-        if (elements.length > 0) {
-            this.titleElement = elements[0];
-            this.title = elements[0].innerText;
-        }
-        else {
-            console.log("No title!");
-            this.titleElement = document.createTextNode(this.title);
-        }
     },
 
     /**
@@ -84,11 +72,12 @@ var easySafeEditor = {
 
         let defaultLabels = {
             save: "Save",
-            cancel: "Cancel"
+            cancel: "Cancel",
+            draft: "Draft"
         };
 
         let defaultActions = {
-            save: function(){},
+            save: function(){ return true; },
             cancel: function(){}
         };
 
@@ -98,7 +87,7 @@ var easySafeEditor = {
         return options;
     },
 
-    saveValues: function() {
+    getValues: function() {
         let values = {};
         values["title"] = this.title;
 
@@ -107,14 +96,7 @@ var easySafeEditor = {
             values = editable.getValue(values);
         }
 
-        let saveOk = false;
-
-        try {
-            saveOk = this.getOptions()["actions"]["save"](values);
-        }
-        catch {
-            saveOk = false;
-        }
+        return values;
     }
 
 };
