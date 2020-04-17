@@ -361,7 +361,11 @@ easySafeEditorOptions = {
         draft: "Rascunho"
     },
     actions: {
-        save: function(values) { console.log(values) },
+        save: function(values) { 
+            const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+            console.log(values);
+            return wait(5000);
+        },
         cancel: function() { console.log("Cancel") }
     }
 };

@@ -12,6 +12,7 @@
     left: 0;
     background: #ffffff;
     z-index: 99999;
+    transition: 0.5s;
     -webkit-box-shadow: 10px 3px 32px -19px rgba(0,0,0,0.2);
     -moz-box-shadow: 10px 3px 32px -19px rgba(0,0,0,0.2);
     box-shadow: 10px 3px 32px -19px rgba(0,0,0,0.2);
@@ -54,6 +55,10 @@
 .menu-admin .header-admin .recolher-menu:hover {
   background-color: #eee;
 }
+
+.menu-admin.hidden .header-admin .recolher-menu:hover {
+    background-color: #333333;
+  }
 
 .menu-admin .header-admin .recolher-menu a {
   width: 100%;
@@ -261,10 +266,10 @@
     right: 20px;
     z-index: 9999;
 }
-.botoes-acoes div{
+.botoes-acoes div {
     margin-right: 25px;
 }
-.botoes-acoes div a{
+.botoes-acoes div a {
     width: 100%;
     text-align: center;
     display: block;
@@ -272,6 +277,21 @@
     -moz-transition: all .2s;
     transition: all .2s;
 }
+
+.botoes-acoes div .lds-ring {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    margin-left: -12px;
+    margin-top: -11px;
+}
+
+.botoes-acoes div .lds-ring div {
+    width: 26px;
+    height: 26px;
+    border-width: 1px;
+}
+
 .botoes-acoes div:last-child{
     margin-right: 0;
 }
@@ -328,3 +348,44 @@
 .black img{ 
     max-width: 120px;
 }
+
+
+
+
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

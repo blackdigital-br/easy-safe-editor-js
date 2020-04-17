@@ -31,7 +31,12 @@ export default class Post {
         this.titleElement.innerText = title;
     }
 
-    savePost(type="publish") {
+    /**
+     * 
+     * @param {String} type 
+     * @returns {Promise}
+     */
+    savePost(type = "publish") {
         let post = {
             title: this.getTitle(),
             type: type,
@@ -39,12 +44,18 @@ export default class Post {
         };
         
         let saveOk = false;
-
         try {
             saveOk = window.easySafeEditor.getOptions()["actions"]["save"](post);
+            
+            if (typeof saveOk === 'Promise')
+                return saveOk;
         }
         catch {
             saveOk = false;
         }
+
+        return new Promise((resolve) => {
+            resolve(saveOk);
+        });
     }
 }
