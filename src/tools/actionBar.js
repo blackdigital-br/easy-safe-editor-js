@@ -36,11 +36,12 @@ export default class ActionBar {
      * @param {MouseEvent} event 
      */
     async onSaveClickButton(event) {
+        event.preventDefault();
+
         if (!this.processing) {
             this.processing = true;
             let loading = Loading.showLoading(this.saveButton.firstElementChild.firstElementChild);
             await window.easySafeEditor.post.savePost();
-            event.preventDefault();
             loading.close();
             this.processing = false;
         }
@@ -59,11 +60,12 @@ export default class ActionBar {
      * @param {MouseEvent} event 
      */
     async onDraftClickButton(event) {
+        event.preventDefault();
+
         if (!this.processing) {
             this.processing = true;
             let loading = Loading.showLoading(this.draftButton.firstElementChild.firstElementChild);
             await window.easySafeEditor.post.savePost("draft");
-            event.preventDefault();
             loading.close();
             this.processing = false;
         }
