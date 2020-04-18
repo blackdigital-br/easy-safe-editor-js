@@ -18,8 +18,10 @@ export default class SideTools {
         this.pageTitle = document.getElementById("easySafeTools_PageTitle");
         this.editableContainers = document.getElementById("easySafeTools_EditableContainers");
         this.collapseButton = document.getElementById("easySafeTools_collapsePanel");
+        this.uncollapseButton = document.getElementById("easySafeTools_uncollapsePanel");  // aqui
 
         this.collapseButton.addEventListener("click", (event) => this.onCollapseButtonClick(event), true);
+        this.uncollapseButton.addEventListener("click", (event) => this.onunCollapseButtonClick(event), true); // aqui
 
         this.pageTitle.value = window.easySafeEditor.post.getTitle();
         this.pageTitle.addEventListener("input", (event) => this.onChangeTitle(event), true);
@@ -85,6 +87,10 @@ export default class SideTools {
         this.toggleTools();
         event.preventDefault();
     }
+    onunCollapseButtonClick(event) { // aqui
+        this.toggleTools();
+        event.preventDefault();
+    }
 
     /**
      * 
@@ -97,6 +103,9 @@ export default class SideTools {
 
 SideTools.toolsHTML = `
 <div id="easySafeTools" class="menu-admin show">
+    <div class="abrir-menu">
+        <a id="easySafeTools_uncollapsePanel" href="#" title="Abrir Menu"><img src="images-admin/left.svg" alt="Abrir Menu"/></a>
+    </div>
     <header class="header-admin"><div class="d-flex justify-content-between align-items-center flex-row">
         <div class="recolher-menu d-flex align-items-center justify-content-center"">
             <a id="easySafeTools_collapsePanel" href="#" title="Recolher Menu"><img src="images-admin/left.svg" alt="Recolher Menu"/></a>

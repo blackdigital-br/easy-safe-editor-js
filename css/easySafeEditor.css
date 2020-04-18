@@ -8,25 +8,64 @@
 
 .menu-admin{
     position: fixed;
+    width: 300px;
+    height: 100%; 
     top: 0;
     left: 0;
     background: #ffffff;
     z-index: 99999;
-    transition: 0.5s;
+    -webkit-transition: all .45s;
+    -moz-transition: all .45s;
+    transition: all .45s;
     -webkit-box-shadow: 10px 3px 32px -19px rgba(0,0,0,0.2);
     -moz-box-shadow: 10px 3px 32px -19px rgba(0,0,0,0.2);
     box-shadow: 10px 3px 32px -19px rgba(0,0,0,0.2);
 }
 .menu-admin.show{
-    width: 300px;
-    height: 100%; 
+    -webkit-transition: all .45s;
+    -moz-transition: all .45s;
+    transition: all .45s;
+    left: 0;
 }
 .menu-admin.hidden{
+    left: -300px;
+}
+.menu-admin .abrir-menu{
+    position: fixed;
     width: 40px;
     height: 40px;
-    overflow: hidden;
-    top:20%;
+    top:30%;
     background: #000000;
+    -webkit-transition: all .45s;
+    -moz-transition: all .45s;
+    transition: all .45s;
+}
+.menu-admin .abrir-menu a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.menu-admin .abrir-menu a img{
+    transform: rotate(180deg);
+    filter: invert(1);
+    margin-left: -2px;
+    -webkit-transition: all .45s;
+    -moz-transition: all .45s;
+    transition: all .45s;
+}
+.menu-admin.hidden .abrir-menu:hover a img{
+    transform: rotate(0deg);
+}
+.menu-admin .abrir-menu,
+.menu-admin.show .abrir-menu{
+    visibility: hidden;
+    left: -40px;
+}
+.menu-admin.hidden .abrir-menu{
+    visibility: visible;
+    left: 0;
 }
 .menu-admin .header-admin{
     height: 40px;
@@ -58,11 +97,20 @@
 
 .menu-admin.hidden .header-admin .recolher-menu:hover {
     background-color: #333333;
-  }
-
+}
+.menu-admin .header-admin .recolher-menu{
+    -webkit-transition: all .45s;
+    -moz-transition: all .45s;
+    transition: all .45s; 
+}
 .menu-admin .header-admin .recolher-menu a {
-  width: 100%;
-  /*height: 100%;*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    -webkit-transition: all .45s;
+    -moz-transition: all .45s;
+    transition: all .45s;
 }
 
 .menu-admin .header-admin div a{
