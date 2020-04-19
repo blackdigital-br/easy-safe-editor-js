@@ -18,10 +18,10 @@ export default class SideTools {
         this.pageTitle = document.getElementById("easySafeTools_PageTitle");
         this.editableContainers = document.getElementById("easySafeTools_EditableContainers");
         this.collapseButton = document.getElementById("easySafeTools_collapsePanel");
-        this.uncollapseButton = document.getElementById("easySafeTools_uncollapsePanel");  // aqui
+        this.uncollapseButton = document.getElementById("easySafeTools_uncollapsePanel");
 
         this.collapseButton.addEventListener("click", (event) => this.onCollapseButtonClick(event), true);
-        this.uncollapseButton.addEventListener("click", (event) => this.onunCollapseButtonClick(event), true); // aqui
+        this.uncollapseButton.addEventListener("click", (event) => this.onCollapseButtonClick(event), true);
 
         this.pageTitle.value = window.easySafeEditor.post.getTitle();
         this.pageTitle.addEventListener("input", (event) => this.onChangeTitle(event), true);
@@ -84,10 +84,6 @@ export default class SideTools {
      * @param {MouseEvent} event 
      */
     onCollapseButtonClick(event) {
-        this.toggleTools();
-        event.preventDefault();
-    }
-    onunCollapseButtonClick(event) { // aqui
         this.toggleTools();
         event.preventDefault();
     }
