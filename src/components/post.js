@@ -58,4 +58,24 @@ export default class Post {
             resolve(saveOk);
         });
     }
+
+    /**
+     * 
+     */
+    cancelPost() {
+        let cancelOk = false;
+        try {
+            cancelOk = window.easySafeEditor.getOptions()["actions"]["cancel"]();
+            
+            if (typeof cancelOk === 'Promise')
+                return cancelOk;
+        }
+        catch {
+            cancelOk = false;
+        }
+
+        return new Promise((resolve) => {
+            resolve(cancelOk);
+        });   
+    }
 }

@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {string} html 
+ * @returns {HTMLElement}
+ */
 export function createElement(html) {
     return createElements(html)[0];
 }

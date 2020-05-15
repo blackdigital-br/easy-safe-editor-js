@@ -58,31 +58,35 @@ var easySafeEditor = {
     },
 
     getOptions: function() {
-        let options = {};
-
-        if (typeof easySafeEditorOptions !== 'undefined') {
-            options = easySafeEditorOptions;
-        }
-
-        if (!("labels" in options))
-            options["labels"] = {};
-
-        if (!("actions" in options))
-            options["actions"] = {};
-
-        let defaultLabels = {
-            save: "Save",
-            cancel: "Cancel",
-            draft: "Draft"
+        let optionsDefaults = {
+            labels: {
+                save: "Save",
+                cancel: "Cancel",
+                draft: "Draft"
+            },
+            actions: {
+                save: function(){ return true; },
+                cancel: function(){}
+            },
+            paths: {
+                images: "images-admin/"
+            },
+            sideBar: {
+                buttons: []
+            }
         };
 
-        let defaultActions = {
-            save: function(){ return true; },
-            cancel: function(){}
-        };
+        let options = {};        
 
-        options["labels"] = Object.assign(defaultLabels, options["labels"]);
-        options["actions"] = Object.assign(defaultActions, options["actions"]);
+        if (typeof easySafeEditorOptions !== 'undefined')
+            Object.assign(options, optionsDefaults, easySafeEditorOptions);
+        else
+            Object.assign(options, optionsDefaults, options);        
+
+        options["labels"] = Object.assign(optionsDefaults["labels"], options["labels"]);
+        options["actions"] = Object.assign(optionsDefaults["actions"], options["actions"]);
+        options["paths"] = Object.assign(optionsDefaults["paths"], options["paths"]);
+        options["sideBar"] = Object.assign(optionsDefaults["sideBar"], options["sideBar"]);
 
         return options;
     },

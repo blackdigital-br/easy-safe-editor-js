@@ -16,6 +16,7 @@ export default class ActionBar {
         html = html.replace(/{save}/g, window.easySafeEditor.getOptions()["labels"]["save"]);
         html = html.replace(/{cancel}/g, window.easySafeEditor.getOptions()["labels"]["cancel"]);
         html = html.replace(/{draft}/g, window.easySafeEditor.getOptions()["labels"]["draft"]);
+        html = html.replace(/{pathImage}/g, window.easySafeEditor.getOptions()["paths"]["images"]);
 
         body.appendChild(createElement(html));
 
@@ -51,8 +52,16 @@ export default class ActionBar {
      * 
      * @param {MouseEvent} event 
      */
-    onCancelClickButton(event) {
+    async onCancelClickButton(event) {
         event.preventDefault();
+
+        if (!this.processing) {
+            this.processing = true;
+            let loading = Loading.showLoading(this.cancelButton.firstElementChild.firstElementChild);
+            await window.easySafeEditor.post.cancelPost();
+            loading.close();
+            this.processing = false;
+        }
     }
 
     /**
@@ -77,7 +86,7 @@ ActionBar.HTML = `
     <div class="publicar-atualizar">
         <a id="easyActionBar_save" href="#" title="{save}">
             <div class="img d-flex align-items-center justify-content-center">
-                <img src="images-admin/publicar.svg" alt="{save}"/>
+                <img src="{pathImage}publicar.svg" alt="{save}"/>
             </div>
             <div class="texto">
                 <p>{save}</p>
@@ -87,7 +96,7 @@ ActionBar.HTML = `
     <div class="raschunho">
         <a id="easyActionBar_draft" href="#" title="{draft}">
             <div class="img d-flex align-items-center justify-content-center">
-                <img src="images-admin/rascunho.svg" alt="{draft}"/>
+                <img src="{pathImage}rascunho.svg" alt="{draft}"/>
             </div>
             <div class="texto">
                 <p>{draft}</p>
@@ -97,7 +106,7 @@ ActionBar.HTML = `
     <div class="cancelar">
         <a id="easyActionBar_cancel" href="#" title="{cancel}">
             <div class="img d-flex align-items-center justify-content-center">
-                <img src="images-admin/cancelar.svg" alt="{cancel}"/>
+                <img src="{pathImage}cancelar.svg" alt="{cancel}"/>
             </div>
             <div class="texto">
                 <p>{cancel}</p>
