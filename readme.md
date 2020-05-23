@@ -13,13 +13,13 @@ Easy Safe Editor is independent, without using other libraries like JQuery. Can 
 Insert the style in the HTML header:
 
 ```HTML
-<link rel="stylesheet" type="text/css" href="/css/easySafeEditor.css">
+<link rel="stylesheet" type="text/css" href="/css/easySafeEditor.min.css">
 ```
 
 Insert the js at the end of the HTML:
 
 ```HTML
-<script src="/js/easySafeEditor.js" type="module"></script>
+<script src="/js/easySafeEditor.min.js" type="module"></script>
 ```
 
 Easy Safe Editor will start automatically.
@@ -96,3 +96,12 @@ This variable is called easySafeEditorOptions and just create it in the format b
 - **actions** - In this configuration you can handle the events of the editor.
 -- **save** - This event is called when the cancel button is clicked, it takes parameters of the current values of the fields.
 -- **cancel** - This event is called when the cancel button is clicked.
+
+## Roadmap
+
+- Editable richText with format buttons.
+- Editable for images.
+- Editable for videos.
+- Editable with template.
+- Editable for embed Youtube video.
+- Editable for embed Instagram post.
