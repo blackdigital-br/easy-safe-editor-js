@@ -68,14 +68,14 @@ For richText:
 
 ## Save Post
 
-Easy Safe Editor does not make requests to save changes, instead it calls a function by passing a json with data that can be treated as you wish. This is passed through the editor's options variable.
+Easy Safe Editor does not make requests to save changes, but calls a function by passing a field data through the parameter, which can be treated as you wish. This function is passed to the editor via the editor's options variable.
 
 This variable is called easySafeEditorOptions and just create it in the format below before calling the editor's script.
 
 ```js
     easySafeEditorOptions = {
         labels: {
-            save: "Salve Label",
+            save: "Save Label",
             cancel: "Cancel Label",
             draft: "Draft Label"
         },
@@ -92,10 +92,10 @@ This variable is called easySafeEditorOptions and just create it in the format b
     };
 ```
 
-- **labels** - In this configuration you can translate the editor to your language.
-- **actions** - In this configuration you can handle the events of the editor.
--- **save** - This event is called when the cancel button is clicked, it takes parameters of the current values of the fields.
--- **cancel** - This event is called when the cancel button is clicked.
+* **labels** - In this configuration you can translate the editor to your language.
+* **actions** - In this configuration you can handle the events of the editor.
+    * **save** - This event is called when the cancel button is clicked, it takes parameters of the current values of the fields.
+    * **cancel** - This event is called when the cancel button is clicked.
 
 ## Roadmap
 
