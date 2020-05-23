@@ -6,7 +6,7 @@ Easy Safe Editor is independent, without using other libraries like JQuery. Can 
 
 ## Warning
 
-*This project is evolving, and we cannot guarantee compatibility between versions yet.*
+**This project is evolving, and we cannot guarantee compatibility between versions yet.**
 
 ## Installation
 
