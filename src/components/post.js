@@ -5,6 +5,7 @@ export default class Post {
     create() {
         this.titleElement = null;
         this.findTitle();
+        
     }
 
     findTitle() {
@@ -15,12 +16,12 @@ export default class Post {
         }
         else {
             console.log("No title!");
-            this.titleElement = document.createTextNode(this.title);
+            this.titleElement = document.createTextNode("");
         }
     }
 
     getTitle() {
-        return this.titleElement.innerText;
+        return this.titleElement.textContent;
     }
 
     /**
@@ -28,7 +29,7 @@ export default class Post {
      * @param {String} title 
      */
     setTitle(title) {
-        this.titleElement.innerText = title;
+        this.titleElement.textContent = title;
     }
 
     /**
