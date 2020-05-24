@@ -3,7 +3,7 @@ import { createElement } from "../utils/element.js";
 export default class Loading {
 
     /**
-     * 
+     * Show loading inner element
      * @param {HTMLElement} element 
      */
     show(element) {
@@ -16,6 +16,9 @@ export default class Loading {
         element.parentElement.insertBefore(this.loadingElement, this.element);
     }
 
+    /**
+     * Close loading
+     */
     close() {
         this.loadingElement.remove();
         this.element.style.visibility = "visible";
@@ -27,7 +30,7 @@ export default class Loading {
     }
 
     /**
-     * 
+     * Create loading object and insert on element
      * @param {HTMLElement} element 
      * @returns {Loading}
      */

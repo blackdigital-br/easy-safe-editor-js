@@ -13,7 +13,12 @@ export default class SideTools {
     create() {
         let body = document.getElementsByTagName("body")[0];
         let html = SideTools.HTML;
-        html = html.replace(/{pathImage}/g, window.easySafeEditor.getOptions()["paths"]["images"]);
+        html = html.replace(/{pathImage}/g, window.easySafeEditor.options.getValue("paths.images"));
+        html = html.replace(/{pageEditTitle}/g, window.easySafeEditor.options.getValue("labels.pageEditTitle"));
+        html = html.replace(/{openMenu}/g, window.easySafeEditor.options.getValue("labels.openMenu"));
+        html = html.replace(/{closeMenu}/g, window.easySafeEditor.options.getValue("labels.closeMenu"));
+        html = html.replace(/{close}/g, window.easySafeEditor.options.getValue("labels.close"));
+        
         let nodePanel = createElement(html);
         body.insertBefore(nodePanel, body.firstChild);
 
@@ -33,7 +38,7 @@ export default class SideTools {
         this.pageTitle.value = window.easySafeEditor.post.getTitle();
         this.pageTitle.addEventListener("input", (event) => this.onChangeTitle(event), true);
 
-        let buttons = window.easySafeEditor.getOptions()["sideBar"]["buttons"];
+        let buttons = window.easySafeEditor.options.getValue("sideBar.buttons");
         buttons.forEach(button => {
             let element = null;
             
@@ -57,16 +62,25 @@ export default class SideTools {
         this.editableContainers = null;
     }
 
+    /**
+     * Show aside tools menu
+     */
     showTools() {
         this.panelTool.classList.remove("show");
         this.panelTool.classList.add("hidden");
     }
 
+    /**
+     * Hide aside tools menu
+     */
     hiddenTools() {
         this.panelTool.classList.remove("hidden");
         this.panelTool.classList.add("show");
     }
 
+    /**
+     * Toggle aside tools menu
+     */
     toggleTools() {
         if (this.panelTool.classList.contains("show"))
             this.showTools();   
@@ -88,7 +102,7 @@ export default class SideTools {
     }
 
     /**
-     * 
+     * Select editable button event, focus editable
      * @param {MouseEvent} event 
      */
     onSelectButtonClick(event) {
@@ -100,7 +114,7 @@ export default class SideTools {
     }
 
     /**
-     * 
+     * Collapse button event, toggle aside menu
      * @param {MouseEvent} event 
      */
     onCollapseButtonClick(event) {
@@ -109,13 +123,17 @@ export default class SideTools {
     }
 
     /**
-     * 
+     * Change title event. Change post title.
      * @param {InputEvent} event 
      */
     onChangeTitle(event) {
         window.easySafeEditor.post.setTitle(event.target.value);
     }
 
+    /**
+     * Close button event, cancel post
+     * @param {*} event 
+     */
     async onCloseButtonClick(event) {
         event.preventDefault();
         await window.easySafeEditor.post.cancelPost();
@@ -124,22 +142,22 @@ export default class SideTools {
 
 SideTools.HTML = `
 <div id="easySafeTools" class="menu-admin show">
-    <div class="abrir-menu">
-        <a id="easySafeTools_uncollapsePanel" href="#" title="Abrir Menu"><img src="{pathImage}left.svg" alt="Abrir Menu"/></a>
+    <div class="open-menu">
+        <a id="easySafeTools_uncollapsePanel" href="#" title="{openMenu}"><img src="{pathImage}left.svg" alt="{openMenu}"/></a>
     </div>
     <header class="header-admin"><div class="d-flex justify-content-between align-items-center flex-row">
-        <div class="fechar-menu d-flex align-items-center justify-content-center">
-            <a id="easySafeTools_closePanel" href="#" title="Close"><img src="{pathImage}close.svg" alt="Close"/></a>
+        <div class="close-menu button-menu d-flex align-items-center justify-content-center">
+            <a id="easySafeTools_closePanel" href="#" title="{close}"><img src="{pathImage}close.svg" alt="{close}"/></a>
         </div>
-        <div class="recolher-menu d-flex align-items-center justify-content-center"">
-            <a id="easySafeTools_collapsePanel" href="#" title="Recolher Menu"><img src="{pathImage}left.svg" alt="Recolher Menu"/></a>
+        <div class="collapse-menu button-menu d-flex align-items-center justify-content-center"">
+            <a id="easySafeTools_collapsePanel" href="#" title="{closeMenu}"><img src="{pathImage}left.svg" alt="{closeMenu}"/></a>
         </div>
-        <div id="easySafeTools_sideButtons" class="idiomas-menu d-flex align-items-center justify-content-center flex-row ml-auto">
+        <div id="easySafeTools_sideButtons" class="action-menu d-flex align-items-center justify-content-center flex-row ml-auto">
         </div>
     </header>
     <div class="title-admin d-flex align-items-center justify-content-center flex-row">
         <div class="d-flex">
-            <h2>Você está editando a página: <input id="easySafeTools_PageTitle" type="text" value="Sobre"></input> </h2>
+            <h2>{pageEditTitle} <input id="easySafeTools_PageTitle" type="text" value="Sobre"></input> </h2>
         </div>
     </div>
     <div class="content-itens">

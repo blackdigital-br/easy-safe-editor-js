@@ -1,3 +1,4 @@
+import Config from "./components/config.js";
 import Post from "./components/post.js";
 import SideTools from "./tools/sideTools.js";
 import FrameTools from "./tools/frameTools.js"
@@ -11,6 +12,8 @@ var easySafeEditor = {
     frameTools: new FrameTools(),
     post: new Post(),
     actionBar: new ActionBar(),
+    options: new Config(),
+    
     //watermark: null,
     editables: [],
     editableSelected: null,
@@ -55,40 +58,6 @@ var easySafeEditor = {
             this.editableSelected = editable;
             this.frameTools.showActions(this.editableSelected);
         }
-    },
-
-    getOptions: function() {
-        let optionsDefaults = {
-            labels: {
-                save: "Save",
-                cancel: "Cancel",
-                draft: "Draft"
-            },
-            actions: {
-                save: function(){ return true; },
-                cancel: function(){}
-            },
-            paths: {
-                images: "images-admin/"
-            },
-            sideBar: {
-                buttons: []
-            }
-        };
-
-        let options = {};        
-
-        if (typeof easySafeEditorOptions !== 'undefined')
-            Object.assign(options, optionsDefaults, easySafeEditorOptions);
-        else
-            Object.assign(options, optionsDefaults, options);        
-
-        options["labels"] = Object.assign(optionsDefaults["labels"], options["labels"]);
-        options["actions"] = Object.assign(optionsDefaults["actions"], options["actions"]);
-        options["paths"] = Object.assign(optionsDefaults["paths"], options["paths"]);
-        options["sideBar"] = Object.assign(optionsDefaults["sideBar"], options["sideBar"]);
-
-        return options;
     },
 
     getValues: function() {

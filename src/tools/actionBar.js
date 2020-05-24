@@ -13,10 +13,10 @@ export default class ActionBar {
         let body = document.getElementsByTagName("body")[0];
         let html = ActionBar.HTML;
         
-        html = html.replace(/{save}/g, window.easySafeEditor.getOptions()["labels"]["save"]);
-        html = html.replace(/{cancel}/g, window.easySafeEditor.getOptions()["labels"]["cancel"]);
-        html = html.replace(/{draft}/g, window.easySafeEditor.getOptions()["labels"]["draft"]);
-        html = html.replace(/{pathImage}/g, window.easySafeEditor.getOptions()["paths"]["images"]);
+        html = html.replace(/{save}/g, window.easySafeEditor.options.getValue("labels.save"));
+        html = html.replace(/{cancel}/g, window.easySafeEditor.options.getValue("labels.cancel"));
+        html = html.replace(/{draft}/g, window.easySafeEditor.options.getValue("labels.draft"));
+        html = html.replace(/{pathImage}/g, window.easySafeEditor.options.getValue("paths.images"));
 
         body.appendChild(createElement(html));
 
@@ -33,7 +33,7 @@ export default class ActionBar {
     }
 
     /**
-     * 
+     * Save click button event, call save post
      * @param {MouseEvent} event 
      */
     async onSaveClickButton(event) {
@@ -49,7 +49,7 @@ export default class ActionBar {
     }
 
     /**
-     * 
+     * Cancel button event, call cancel post
      * @param {MouseEvent} event 
      */
     async onCancelClickButton(event) {
@@ -65,7 +65,7 @@ export default class ActionBar {
     }
 
     /**
-     * 
+     * Draft button event, call save post with draft attribute
      * @param {MouseEvent} event 
      */
     async onDraftClickButton(event) {
@@ -82,8 +82,8 @@ export default class ActionBar {
 }
 
 ActionBar.HTML = `
-<div id="easyActionBar" class="botoes-acoes d-flex flex-row">
-    <div class="publicar-atualizar">
+<div id="easyActionBar" class="actionBar-buttons d-flex flex-row">
+    <div class="publish-refresh">
         <a id="easyActionBar_save" href="#" title="{save}">
             <div class="img d-flex align-items-center justify-content-center">
                 <img src="{pathImage}publicar.svg" alt="{save}"/>
@@ -93,7 +93,7 @@ ActionBar.HTML = `
             </div>
         </a> 
     </div>
-    <div class="raschunho">
+    <div class="draft">
         <a id="easyActionBar_draft" href="#" title="{draft}">
             <div class="img d-flex align-items-center justify-content-center">
                 <img src="{pathImage}rascunho.svg" alt="{draft}"/>
@@ -103,10 +103,10 @@ ActionBar.HTML = `
             </div>
         </a> 
     </div>
-    <div class="cancelar">
+    <div class="cancel">
         <a id="easyActionBar_cancel" href="#" title="{cancel}">
             <div class="img d-flex align-items-center justify-content-center">
-                <img src="{pathImage}cancelar.svg" alt="{cancel}"/>
+                <img src="{pathImage}cancel.svg" alt="{cancel}"/>
             </div>
             <div class="texto">
                 <p>{cancel}</p>

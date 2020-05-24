@@ -17,10 +17,11 @@ export default class FrameTools {
         this.frameTool = document.getElementById("frameEdtitable");
         this.pageTitle = document.getElementById("frameEdtitable_frameTitle");
         this.actionsDiv = document.getElementById("frameEdtitable_frameActions");
+        this.currentEditable = null;
     }
 
     /**
-     * 
+     * Show frame tools in editable element
      * @param {Editable} editable 
      */
     showActions(editable) {
@@ -29,7 +30,12 @@ export default class FrameTools {
             this.actionsDiv.removeChild(this.actionsDiv.lastChild);
         }
 
+        if (this.currentEditable != null) {
+            this.currentEditable.element.classList.remove("editable-focus");
+        }
+
         if (editable != undefined && editable != null) {
+            this.currentEditable = editable;
             this.frameTool.style.visibility = "visible";
             this.frameTool.style.position = "absolute";
 
@@ -37,10 +43,12 @@ export default class FrameTools {
             this.frameTool.style.top = (getOffsetTop(editable.element) - this.frameTool.offsetHeight) + "px";
 
             this.pageTitle.innerText = editable.label;
+            editable.element.classList.add("editable-focus");
         }
         else {
             this.pageTitle.innerText = "";
             this.frameTool.style.visibility = "hidden";
+            this.currentEditable = null;
         }
     }
 

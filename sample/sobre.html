@@ -47,13 +47,13 @@
     <!--div class="menu-admin show">
         <header class="header-admin">
             <div class="d-flex justify-content-between align-items-center flex-row">
-                <div class="fechar-menu d-flex align-items-center justify-content-center">
+                <div class="close-menu d-flex align-items-center justify-content-center">
                     <a href="#" title="Fechar"><img src="images-admin/close.svg" alt="Fechar"/></a>
                 </div>
-                <div class="recolher-menu d-flex align-items-center justify-content-center"">
+                <div class="collapse-menu d-flex align-items-center justify-content-center"">
                     <a href="#" title="Recolher Menu"><img src="images-admin/left.svg" alt="Recolher Menu"/></a>
                 </div>
-                <div class="idiomas-menu d-flex align-items-center justify-content-center flex-row ml-auto">
+                <div class="action-menu d-flex align-items-center justify-content-center flex-row ml-auto">
                     <a href="#" title="Português" class="active"><img src="images-admin/flag-brasil.svg" alt="Português"/></a>
                     <a href="#" title="Inglês"><img src="images-admin/flag-eua.svg" alt="Inglês"/></a>
                 </div>
@@ -86,8 +86,8 @@
     </div-->
 
     <!-- BOTOES ACOES -->
-    <!--div class="botoes-acoes d-flex flex-row">
-        <div class="publicar-atualizar">
+    <!--div class="actionBar-buttons d-flex flex-row">
+        <div class="publish-refresh">
             <a href="#" title="Publicar">
                 <div class="img d-flex align-items-center justify-content-center">
                     <img src="images-admin/publicar.svg" alt="Publicar"/>
@@ -97,33 +97,33 @@
                 </div>
             </a> 
         </div>
-        <div class="raschunho">
-            <a href="#" title="Raschunho">
+        <div class="draft">
+            <a href="#" title="draft">
                 <div class="img d-flex align-items-center justify-content-center">
-                    <img src="images-admin/rascunho.svg" alt="Raschunho"/>
+                    <img src="images-admin/rascunho.svg" alt="draft"/>
                 </div>
                 <div class="texto">
-                    <p>Raschunho</p>
+                    <p>draft</p>
                 </div>
             </a> 
         </div>
-        <div class="visualizar">
-            <a href="#" title="Visualizar">
+        <div class="preview">
+            <a href="#" title="preview">
                 <div class="img d-flex align-items-center justify-content-center">
-                    <img src="images-admin/visualizar.svg" alt="Visualizar"/>
+                    <img src="images-admin/preview.svg" alt="preview"/>
                 </div>
                 <div class="texto">
-                    <p>Visualizar</p>
+                    <p>preview</p>
                 </div>
             </a> 
         </div>
-        <div class="cancelar">
-            <a href="#" title="Cancelar">
+        <div class="cancel">
+            <a href="#" title="cancel">
                 <div class="img d-flex align-items-center justify-content-center">
-                    <img src="images-admin/cancelar.svg" alt="Cancelar"/>
+                    <img src="images-admin/cancel.svg" alt="cancel"/>
                 </div>
                 <div class="texto">
-                    <p>Cancelar</p>
+                    <p>cancel</p>
                 </div>
             </a> 
         </div>
@@ -358,7 +358,11 @@ easySafeEditorOptions = {
     labels: {
         save: "Salvar",
         cancel: "Cancelar",
-        draft: "Rascunho"
+        draft: "Rascunho",
+        pageEditTitle: "Você está editando a página:",
+        openMenu: "Abrir Menu",
+        closeMenu: "Recolher Menu",
+        close: "Fechar"
     },
     actions: {
         save: function(values) { 

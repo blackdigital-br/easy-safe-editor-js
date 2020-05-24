@@ -1,13 +1,20 @@
 
-
+/**
+ * Manage post edit
+ */
 export default class Post {
     
+    /**
+     * Create the post object
+     */
     create() {
         this.titleElement = null;
         this.findTitle();
-        
     }
 
+    /**
+     * Find the current title element
+     */
     findTitle() {
         let elements = document.querySelectorAll("[data-title='true']");
 
@@ -20,12 +27,15 @@ export default class Post {
         }
     }
 
+    /**
+     * Get current title value
+     */
     getTitle() {
         return this.titleElement.textContent;
     }
 
     /**
-     * 
+     * Set new title
      * @param {String} title 
      */
     setTitle(title) {
@@ -33,7 +43,7 @@ export default class Post {
     }
 
     /**
-     * 
+     * Save post action
      * @param {String} type 
      * @returns {Promise}
      */
@@ -46,7 +56,7 @@ export default class Post {
         
         let saveOk = false;
         try {
-            saveOk = window.easySafeEditor.getOptions()["actions"]["save"](post);
+            saveOk = window.easySafeEditor.options.getValue("actions.save")(post);
             
             if (typeof saveOk === 'Promise')
                 return saveOk;
@@ -61,12 +71,12 @@ export default class Post {
     }
 
     /**
-     * 
+     * Cancel post action
      */
     cancelPost() {
         let cancelOk = false;
         try {
-            cancelOk = window.easySafeEditor.getOptions()["actions"]["cancel"]();
+            cancelOk = window.easySafeEditor.options.getValue("actions.cancel")();
             
             if (typeof cancelOk === 'Promise')
                 return cancelOk;

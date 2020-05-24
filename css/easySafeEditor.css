@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-[data-edit = true]:hover {
-  outline: 1px solid #ccc;
-} 
-
 /* CSS Document */
 
 .menu-admin{
@@ -30,7 +26,7 @@
 .menu-admin.hidden{
     left: -300px;
 }
-.menu-admin .abrir-menu{
+.menu-admin .open-menu{
     position: fixed;
     width: 40px;
     height: 40px;
@@ -40,14 +36,14 @@
     -moz-transition: all .45s;
     transition: all .45s;
 }
-.menu-admin .abrir-menu a{
+.menu-admin .open-menu a{
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
 }
-.menu-admin .abrir-menu a img{
+.menu-admin .open-menu a img{
     transform: rotate(180deg);
     filter: invert(1);
     margin-left: -2px;
@@ -55,15 +51,15 @@
     -moz-transition: all .45s;
     transition: all .45s;
 }
-.menu-admin.hidden .abrir-menu:hover a img{
+.menu-admin.hidden .open-menu:hover a img{
     transform: rotate(0deg);
 }
-.menu-admin .abrir-menu,
-.menu-admin.show .abrir-menu{
+.menu-admin .open-menu,
+.menu-admin.show .open-menu{
     visibility: hidden;
     left: -40px;
 }
-.menu-admin.hidden .abrir-menu{
+.menu-admin.hidden .open-menu{
     visibility: visible;
     left: 0;
 }
@@ -77,33 +73,32 @@
 .menu-admin .header-admin > div{
     height: 100%;
 }
-.menu-admin.hidden .fechar-menu,
-.menu-admin.hidden .idiomas-menu,
+.menu-admin.hidden .close-menu,
+.menu-admin.hidden .action-menu,
 .menu-admin.hidden .title-admin,
 .menu-admin.hidden .content-itens{
     display: none !important;
 }
-.menu-admin .header-admin .fechar-menu,
-.menu-admin .header-admin .recolher-menu{
+.menu-admin .header-admin .button-menu {
     float: left;
     width: 40px;
     height: 100%;
     border-right: 1px solid #d4d4d4;
 }
 
-.menu-admin .header-admin .recolher-menu:hover {
+.menu-admin .header-admin .button-menu:hover {
   background-color: #eee;
 }
 
-.menu-admin.hidden .header-admin .recolher-menu:hover {
+.menu-admin.hidden .header-admin .button-menu:hover {
     background-color: #333333;
 }
-.menu-admin .header-admin .recolher-menu{
+.menu-admin .header-admin .button-menu {
     -webkit-transition: all .45s;
     -moz-transition: all .45s;
     transition: all .45s; 
 }
-.menu-admin .header-admin .recolher-menu a {
+.menu-admin .header-admin .button-menu a {
     width: 100%;
     height: 100%;
     display: flex;
@@ -139,17 +134,17 @@
 .menu-admin .header-admin div a:hover img{
     filter: invert(0%) sepia(100%) saturate(21%) hue-rotate(353deg) brightness(94%) contrast(104%);
 }
-.menu-admin .header-admin .idiomas-menu a{
+.menu-admin .header-admin .action-menu a{
     width: 30px;
     height: 30px;
     margin-right: 10px;
 }
-.menu-admin .header-admin .idiomas-menu a.active img,
-.menu-admin .header-admin .idiomas-menu a:hover img{
+.menu-admin .header-admin .action-menu a.active img,
+.menu-admin .header-admin .action-menu a:hover img{
     filter: none;
     opacity: 1;
 }
-.menu-admin .header-admin .idiomas-menu a img{ 
+.menu-admin .header-admin .action-menu a img{ 
     opacity: .3;
     max-height: initial;
     height: 100%;
@@ -227,6 +222,10 @@
 
 /* FORMAT TEXT */
 
+.editable-focus {
+    outline: 1px solid #ccc;
+}
+
 #frameEdtitable h6 {
     background-color: #fff;
     border: 1px solid #ccc;
@@ -303,21 +302,18 @@
     background: url(../sample/images-admin/txt-underline.svg) no-repeat center !important;
 }
 
-
-
-
 /* BOTOES DE ACAO */
 
-.botoes-acoes{
+.actionBar-buttons {
     position: fixed;
     bottom: 5px;
     right: 20px;
     z-index: 9999;
 }
-.botoes-acoes div {
+.actionBar-buttons div {
     margin-right: 25px;
 }
-.botoes-acoes div a {
+.actionBar-buttons div a {
     width: 100%;
     text-align: center;
     display: block;
@@ -326,7 +322,7 @@
     transition: all .2s;
 }
 
-.botoes-acoes div .lds-ring {
+.actionBar-buttons div .lds-ring {
     width: 30px;
     height: 30px;
     margin: 0;
@@ -334,28 +330,28 @@
     margin-top: -11px;
 }
 
-.botoes-acoes div .lds-ring div {
+.actionBar-buttons div .lds-ring div {
     width: 26px;
     height: 26px;
     border-width: 1px;
 }
 
-.botoes-acoes div:last-child{
+.actionBar-buttons div:last-child{
     margin-right: 0;
 }
-.botoes-acoes .publicar-atualizar a .img{
+.actionBar-buttons .publish-refresh a .img{
     background: #28ce86;
 }
-.botoes-acoes .raschunho a .img{
+.actionBar-buttons .draft a .img{
     background: #0e93f9;
 }
-.botoes-acoes .visualizar a .img{
+.actionBar-buttons .preview a .img{
     background: #f9bf0e;
 }
-.botoes-acoes .cancelar a .img{
+.actionBar-buttons .cancel a .img{
     background: #ce2828;
 }
-.botoes-acoes div a .img{
+.actionBar-buttons div a .img{
     background: #000000;
     width: 50px;
     height: 50px;
@@ -367,12 +363,12 @@
     transition: all .2s;
     transform: scale(1);
 }
-.botoes-acoes div a .img img{
+.actionBar-buttons div a .img img{
     text-align: center;
     max-width: 20px;
     filter: invert(94%) sepia(100%) saturate(0%) hue-rotate(223deg) brightness(107%) contrast(107%);
 }
-.botoes-acoes div a:hover .img{
+.actionBar-buttons div a:hover .img{
     opacity: 1;
     transform: scale(1.2);
 }
