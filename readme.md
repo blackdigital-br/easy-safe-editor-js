@@ -6,7 +6,7 @@ Easy Safe Editor is independent, without using other libraries like JQuery. Can 
 
 ## Warning
 
-**This project is evolving, and we cannot guarantee compatibility between versions yet.**
+**This project is in constant development and we cannot guarantee compatibility with future versions.**
 
 ## Installation
 
@@ -94,7 +94,7 @@ This variable is called easySafeEditorOptions and just create it in the format b
 
 * **labels** - In this configuration you can translate the editor to your language.
 * **actions** - In this configuration you can handle the events of the editor.
-    * **save** - This event is called when the cancel button is clicked, it takes parameters of the current values of the fields.
+    * **save** - This event is called when the save button is clicked, it takes parameters of the current values of the fields.
     * **cancel** - This event is called when the cancel button is clicked.
 
 ## Roadmap
