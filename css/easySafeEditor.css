@@ -16,6 +16,7 @@
     -webkit-box-shadow: 10px 3px 32px -19px rgba(0,0,0,0.2);
     -moz-box-shadow: 10px 3px 32px -19px rgba(0,0,0,0.2);
     box-shadow: 10px 3px 32px -19px rgba(0,0,0,0.2);
+    overflow-y: auto;
 }
 .menu-admin.show{
     -webkit-transition: all .45s;
