@@ -33,6 +33,6 @@
     "load-grunt-tasks": "4.0.0",
     "uglify-es": "3.3.9",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   }
 }
